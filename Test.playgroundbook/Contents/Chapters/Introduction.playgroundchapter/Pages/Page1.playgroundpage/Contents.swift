@@ -1,10 +1,11 @@
+//#-hidden-code
 import PlaygroundSupport
-
-let 📄 = Var(true), 🖋 = Var(true)
+//#-end-hidden-code
+let 📄 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🖋 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
 let 📝 = AND(📄,🖋)
 
-let 🍦 = Var(true), 🍨 = Var(true)
+let 🍦 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🍨 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
 let 😍 = OR(🍦,🍨)
 
-let 👍 = Var(true)
+let 👍 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
 let 👎 = NOT(👍)
