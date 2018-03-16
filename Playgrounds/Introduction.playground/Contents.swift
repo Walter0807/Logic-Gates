@@ -44,12 +44,10 @@ func XNOR(_ input1: Var, _ input2: Var) -> Var{
     return result
 }
 
-let 📄 = Var(true)
-let 🖋 = Var(true)
+let 📄 = Var(true), 🖋 = Var(true)
 let 📝 = AND(📄,🖋)
 
-let 🍦 = Var(true)
-let 🍨 = Var(true)
+let 🍦 = Var(true), 🍨 = Var(true)
 let 😍 = OR(🍦,🍨)
 
 let 👍 = Var(true)
