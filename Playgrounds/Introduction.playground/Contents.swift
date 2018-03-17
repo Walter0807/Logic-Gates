@@ -13,6 +13,14 @@ struct Var {
     }
 }
 
+func ==(lhs: Var, rhs: Var) -> Bool {
+    return lhs.value == rhs.value
+}
+
+func !=(lhs: Var, rhs: Var) -> Bool {
+    return lhs.value != rhs.value
+}
+
 func AND(_ input1: Var, _ input2: Var) -> Var{
     let result = Var(input1.value && input2.value)
     return result
@@ -71,14 +79,14 @@ func Test(_ 🏀: Var, _ 📚: Var) -> Var{
     return 😁
 }
 
-let correctAnswer = [false, false, true, false]
+let correctAnswer = [Var(false), Var(false), Var(true), Var(false)]
 
 for i in 0..<4 {
-    let happy = Test(Var(i/2), Var(i%2))
-    if happy.value != correctAnswer[i] {
+    if Test(Var(i/2), Var(i%2)) != correctAnswer[i] {
         let wrong = true
     }
 }
+
 
 
 

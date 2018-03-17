@@ -8,8 +8,7 @@ import Foundation
 //extension MyType: CustomPlaygroundQuickLookable { /…/ } #endif
 
 public struct Var {
-    //fileprivate
-    public var value: Bool
+    fileprivate var value: Bool
     public init(_ withValue: Bool) {
         value = withValue
     }
@@ -54,4 +53,18 @@ public func XNOR(_ input1: Var, _ input2: Var) -> Var{
     let result = Var((input1.value == input2.value))
     return result
 }
+
+public func ==(lhs: Var, rhs: Var) -> Bool {
+    return lhs.value == rhs.value
+}
+
+public func !=(lhs: Var, rhs: Var) -> Bool {
+    return lhs.value != rhs.value
+}
+
+
+
+
+
+
 
