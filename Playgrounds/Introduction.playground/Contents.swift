@@ -53,6 +53,19 @@ let 😍 = OR(🍦,🍨)
 let 👍 = Var(true)
 let 👎 = NOT(👍)
 
+let a = Var(true), b = Var(false)
+let x = NAND(a,b)
+
+let c = Var(false), d = Var(false)
+let y = NOR(c,d)
+let m = XOR(x,y), n = Var(true)
+let z = XNOR(m,n)
+
+
+
+
+
+
 
 
 

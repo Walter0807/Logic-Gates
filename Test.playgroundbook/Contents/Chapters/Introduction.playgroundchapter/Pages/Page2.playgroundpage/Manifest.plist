@@ -5,8 +5,8 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Second Example Page</string>
+	<string>NOR, NAND, XOR, XNOR</string>
 	<key>LiveViewMode</key>
-	<string>HiddenByDefault</string>
+	<string>VisibleByDefault</string>
 </dict>
 </plist>
