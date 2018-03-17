@@ -21,6 +21,10 @@ func Test(_ 🏀: Var, _ 📚: Var) -> Var{
 //#-code-completion(identifier, show, 🏀, 📚)
 //Now implement this expression to model the boy's happiness.
     var 😁 = /*#-editable-code your expression here*/AND(🏀,NOT(📚))/*#-end-editable-code*/
+/*:
+Tap *"Run My Code"* to check the results.
+On [next page](@next), you will solve a problem based on your own inspection.
+*/
 //#-hidden-code
     return 😁
 }
@@ -37,5 +41,4 @@ for i in 0..<4 {
 if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Keep [going](@next)!")
 }
-
 //#-end-hidden-code
