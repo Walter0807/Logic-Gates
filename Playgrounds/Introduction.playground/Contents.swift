@@ -7,6 +7,10 @@ struct Var {
     init(_ withValue: Bool) {
         value = withValue
     }
+    init(_ withInt: Int) {
+        if withInt==1 {value = true}
+        else {value = false}
+    }
 }
 
 func AND(_ input1: Var, _ input2: Var) -> Var{
@@ -62,6 +66,19 @@ let m = XOR(x,y), n = Var(true)
 let z = XNOR(m,n)
 
 
+func Test(_ 🏀: Var, _ 📚: Var) -> Var{
+    let 😁 = AND(🏀,NOT(📚))
+    return 😁
+}
+
+let correctAnswer = [false, false, true, false]
+
+for i in 0..<4 {
+    let happy = Test(Var(i/2), Var(i%2))
+    if happy.value != correctAnswer[i] {
+        let wrong = true
+    }
+}
 
 
 
@@ -70,8 +87,7 @@ let z = XNOR(m,n)
 
 
 
-
-//💑🏆⚽️🎈🙌🍦🍧🍨😍📝📄🔑🔒🔓👍👎
+//💑🏆⚽️🎈🙌🍦🍧🍨😍📝📄🔑🔒🔓👍👎🙁😁😔📚📖📕🏀⚽️
 
 
 

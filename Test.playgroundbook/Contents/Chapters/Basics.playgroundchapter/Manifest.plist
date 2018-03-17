@@ -5,11 +5,12 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Gates</string>
+	<string>Basics</string>
 	<key>Pages</key>
 	<array>
 		<string>Basics1.playgroundpage</string>
 		<string>Basics2.playgroundpage</string>
+		<string>Basics3.playgroundpage</string>
 	</array>
 </dict>
 </plist>
