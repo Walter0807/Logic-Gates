@@ -5,8 +5,11 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>NOR, NAND, XOR, XNOR</string>
-	<key>LiveViewMode</key>
-	<string>VisibleByDefault</string>
+	<string>Gates</string>
+	<key>Pages</key>
+	<array>
+		<string>Basics1.playgroundpage</string>
+		<string>Basics2.playgroundpage</string>
+	</array>
 </dict>
 </plist>

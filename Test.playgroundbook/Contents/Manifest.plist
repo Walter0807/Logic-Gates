@@ -16,7 +16,8 @@
 	<string>ios11.0</string>
 	<key>Chapters</key>
 	<array>
-		<string>Introduction.playgroundchapter</string>
+		<string>Basics.playgroundchapter</string>
+		<string>Intermediate.playgroundchapter</string>
 	</array>
 </dict>
 </plist>
