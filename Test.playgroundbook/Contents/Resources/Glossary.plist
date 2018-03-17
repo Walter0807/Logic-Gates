@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>Boolean variables</key>
+		<dict>
+			<key>Definition</key>
+			<string>Variables whose values are the truth values `true` and `false`, usually denoted by `1` and `0` respectively.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Basics/Logic%20Gates</string>
+				<key>Title</key>
+				<string>Logic Gates</string>
+			</dict>
+		</dict>
+		<key>truth table</key>
+		<dict>
+			<key>Definition</key>
+			<string>A truth table has one column for each input variable and one final column showing all of the possible results. Each row of the table contains one possible configuration of the input variables and the result of the operation for those values. </string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Basics/Logic%20Gates</string>
+				<key>Title</key>
+				<string>Logic Gates</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
