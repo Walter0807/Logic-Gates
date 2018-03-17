@@ -10,7 +10,7 @@
  - OR gate: A `true` output results if one or both the inputs to the gate are `true`.
  - NOT gate: If the applied input is `false` then the output becomes `high` and vice versa.
  
- The bahavior of these gates are represented by the [truth table](glossary://truth%table) on the right.
+ The bahavior of these gates are represented by the [truth table](glossary://truth%20table) on the right.
 
  
  * Experiment:
@@ -21,10 +21,13 @@
  
  
  
+ 
  */
 //#-hidden-code
 import PlaygroundSupport
 //#-end-hidden-code
+//#-code-completion(everything, hide)
+//#-code-completion(identifier, show, true, false)
 let 📄 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🖋 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
 let 📝 = AND(📄,🖋)
 
@@ -38,3 +41,25 @@ let 👎 = NOT(👍)
 Tap *"Run My Code"* to check the results.
 When you are ready, move on to the [next page](@next)
  */
+
+//#-hidden-code
+if 📝 == Var(true) && 😍 == Var(true) && 👎 == Var(false){
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Now let's [proceed](@next).")
+}
+else{
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Try to use the [truth table](glossary://truth%20table) above."], solution: nil)
+
+}
+//#-end-hidden-code
+
+
+
+
+
+
+
+
+
+
+
+

@@ -65,6 +65,8 @@ let 😍 = OR(🍦,🍨)
 let 👍 = Var(true)
 let 👎 = NOT(👍)
 
+
+
 let a = Var(true), b = Var(false)
 let x = NAND(a,b)
 
