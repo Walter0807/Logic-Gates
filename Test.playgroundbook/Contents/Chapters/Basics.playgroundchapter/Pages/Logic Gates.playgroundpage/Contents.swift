@@ -1,0 +1,40 @@
+/*:
+
+ **Boolean operations** can be used to describe connections between multiple [Boolean variables](glossary://Boolean%20variables). The basic operations of Boolean algebra are `AND`, `OR`, `NOT`.
+ 
+ A **logic gate** is a physical device which implements a Boolean operation; that is, it performs a logical operation on one or more binary inputs and produces a single binary output.
+ 
+ The basic logic gates are:
+ 
+ - AND gate: A `true` output results only if all the inputs to the gate are `true`.
+ - OR gate: A `true` output results if one or both the inputs to the gate are `true`.
+ - NOT gate: If the applied input is `false` then the output becomes `high` and vice versa.
+ 
+ The bahavior of these gates are represented by the [truth table](glossary://truth%table) on the right.
+
+ 
+ * Experiment:
+   Let's start by trying to set the input values of the logic gates:
+     1. Set the value of 📄 and 🖋 so that the output of the AND gate, 📝, is `true`.
+     2. Set the value of 🍦 and 🍨 to ensure the OR gate output, 😍, is `true`.
+     3. Set the value of 👍 to make 👎 `false`.
+ 
+ 
+ 
+ */
+//#-hidden-code
+import PlaygroundSupport
+//#-end-hidden-code
+let 📄 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🖋 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
+let 📝 = AND(📄,🖋)
+
+let 🍦 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🍨 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
+let 😍 = OR(🍦,🍨)
+
+let 👍 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
+let 👎 = NOT(👍)
+
+/*:
+Tap *"Run My Code"* to check the results.
+When you are ready, move on to the [next page](@next)
+ */
