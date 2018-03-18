@@ -3,9 +3,9 @@
 Now let's use **Boolean operations** to model some variables in real life. Additionally, they can be represented by **cascading logic gates**.
 
  - Example: **A Playful Boy**\
- My younger brother is obsessed with basketball🏀 and doesn't feel comfortable doing his homework📚. There's no difficulty to infer his mood.\
+My younger brother is obsessed with basketball🏀 and doesn't feel comfortable doing his homework📚. There's no difficulty to infer his mood.\
  \
- The boy is happy😁 **only** when:
+The boy is happy😁 **only** when:
     - He plays basketball🏀.
     - He does't have to do his homework📚.
  
@@ -23,7 +23,7 @@ func Test(_ 🏀: Var, _ 📚: Var) -> Var{
 //Now implement this expression to model the boy's happiness.
     var 😁 = /*#-editable-code your expression here*/AND(🏀,NOT(📚))/*#-end-editable-code*/
 /*:
-Tap *"Run My Code"* to check the results.
+Tap *"Run My Code"* to check the result.
 On [next page](@next), you will solve a problem based on your own inspection.
 */
 //#-hidden-code

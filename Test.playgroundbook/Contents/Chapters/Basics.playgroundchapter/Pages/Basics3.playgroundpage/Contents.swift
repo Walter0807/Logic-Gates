@@ -21,7 +21,7 @@ func Test(_ a: Var, _ b: Var) -> Var{
     //Calculate the output
     var z = /*#-editable-code*/ AND(c, NOT(d)) /*#-end-editable-code*/
 /*:
-Tap *"Run My Code"* to check the results.
+Tap *"Run My Code"* to check the result.
 [Next chapter](@next) will introduce more **logic gates**.
 */
     //#-hidden-code
