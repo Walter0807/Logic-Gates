@@ -90,8 +90,9 @@ for i in 0..<4 {
 }
 
 
-
-
+//AND OR NOT NAND NOR XOR XNOR
+public var allowGates = [Bool]()
+allowGates = [true,true,true,false,false,false,false]
 
 
 

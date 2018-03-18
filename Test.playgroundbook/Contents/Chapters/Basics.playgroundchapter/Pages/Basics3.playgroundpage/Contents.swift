@@ -8,6 +8,7 @@ Here are two examples (`c`, `d`), you may change them or add more.
  */
 //#-hidden-code
 import PlaygroundSupport
+allowGates = [true,true,true,false,false,false,false]
 func Test(_ a: Var, _ b: Var) -> Var{
     //#-end-hidden-code
     //#-code-completion(everything, hide)

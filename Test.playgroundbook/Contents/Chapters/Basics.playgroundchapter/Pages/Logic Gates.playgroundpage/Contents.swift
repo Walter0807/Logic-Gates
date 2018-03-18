@@ -25,6 +25,7 @@
  */
 //#-hidden-code
 import PlaygroundSupport
+allowGates = [true,true,true,false,false,false,false]
 //#-end-hidden-code
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, true, false)

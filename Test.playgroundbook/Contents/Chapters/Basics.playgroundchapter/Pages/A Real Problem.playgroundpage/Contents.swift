@@ -14,6 +14,7 @@ Now let's use **Boolean operations** to model some variables in real life. Addit
  */
 //#-hidden-code
 import PlaygroundSupport
+allowGates = [true,true,true,false,false,false,false]
 func Test(_ 🏀: Var, _ 📚: Var) -> Var{
 //#-end-hidden-code
 //#-code-completion(everything, hide)

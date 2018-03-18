@@ -18,6 +18,8 @@ Despite the 3 basic logic gates, another 4 gates are also widely used:
  */
 //#-hidden-code
 import PlaygroundSupport
+allowGates = [false,false,false,true,true,true,true]
+//AND OR NOT NAND NOR XOR XNOR
 //#-end-hidden-code
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, true, false)
