@@ -2,7 +2,7 @@
 
  **Boolean operations** can be used to describe connections between multiple [Boolean variables](glossary://Boolean%20variables). The basic operations of Boolean algebra are `AND`, `OR`, `NOT`.
  
- A **logic gate** is a physical device which implements a Boolean operation; that is, it performs a logical operation on one or more (in this playground, we only consider 1 or 2) binary inputs and produces a single binary output.
+ A **logic gate** is a physical device which implements a Boolean operation; that is, it performs a logical operation on 1 or 2 binary inputs and produces a single binary output.
  
  The basic logic gates are:
  
