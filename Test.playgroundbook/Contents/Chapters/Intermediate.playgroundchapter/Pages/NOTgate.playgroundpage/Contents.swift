@@ -1,6 +1,6 @@
 /*:
 In this page, you will build your own NOT gate using NOR gate(s) **only**.\
-Use as few NOR gate(s) as possible.\
+You are encouraged to use as few NOR gate(s) as possible.\
 Related [truth tables](glossary://truth%20table) are posted on the right as references.
 */
 //#-hidden-code
@@ -11,7 +11,7 @@ func Test(_ x: Var) -> Var{
 //#-end-hidden-code
     //#-code-completion(everything, hide)
     //#-code-completion(description, show, "NOR(input1: Var, input2: Var)")
-    //#-code-completion(identifier, show, input)
+    //#-code-completion(identifier, show, x)
     //Use x as the input variable.
     var result = /*#-editable-code your expression here*/NOR(x,x)/*#-end-editable-code*/
 /*:
@@ -25,7 +25,7 @@ func Test(_ x: Var) -> Var{
 
 if Test(Var(true))==Var(false) && Test(Var(false))==Var(true)
 {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Now you know how to use a NOR gate as a NOT gate. ")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Now you know how to use a NOR gate as a NOT gate. How about [this one](@next)?")
 }
 else {
     PlaygroundPage.current.assessmentStatus = .fail(hints: ["Two inputs of the NOR gate may be the same."], solution: "var result = NOR(x,x)")
