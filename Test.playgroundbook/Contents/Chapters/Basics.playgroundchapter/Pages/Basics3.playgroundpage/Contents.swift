@@ -1,7 +1,7 @@
 /*:
  Let's focus on a more general problem.
  
- For input variables `a`, `b`, use AND, OR, NOT gates to implement the logic given by the [truth table](glossary://truth%20table) on the right.
+ For input variables `a`, `b`, use [AND](glossary://AND%20gate), OR(glossary://OR%20gate), NOT(glossary://NOT%20gate) gates to implement the logic given by the [truth table](glossary://truth%20table) on the right.
  - Note:
 Introducing **additional local variables** is really helpful.\
 Here are two examples (`c`, `d`), you may change them or add more.

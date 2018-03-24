@@ -3,13 +3,13 @@
 You may have noticed that some gates are "replaceable", which means their functions can be **fully** replaced by some other gates.
  \
  \
-As a matter of fact, *Charles Sanders Peirce* (during 1880–81) showed that NOR gates alone (or alternatively NAND gates alone) can be used to reproduce the functions of all the other logic gates. The first published proof was by Henry M. Sheffer in 1913, so the NAND logical operation is sometimes called Sheffer stroke; the logical NOR is sometimes called Peirce's arrow. Consequently, these gates are sometimes called universal logic gates.
+As a matter of fact, *Charles Sanders Peirce* (during 1880–81) showed that [NOR gates](glossary://NOR%20gate) alone (or alternatively [NAND gates](glossary://NAND%20gate) alone) can be used to reproduce the functions of all the other logic gates. The first published proof was by *Henry M. Sheffer* in 1913, so the NAND logical operation is sometimes called Sheffer stroke; the logical NOR is sometimes called Peirce's arrow. Consequently, these gates are sometimes called [universal logic gates](glossary://universal%20logic%20gate).
  \
  \
- On the next two pages, you'll try to prove this theorem.
+On the next two pages, you'll try to prove this theorem partly.
  
-In this page, you will build your own NOT gate using NOR gate(s) **only**.\
-You are encouraged to use as few NOR gate(s) as possible.\
+In this page, you will build your own [NOT gate](glossary://NOT%20gate) using [NOR gate(s)](glossary://NOR%20gate) **only**.\
+You are encouraged to use as few [NOR gate(s)](glossary://NOR%20gate) as possible.\
 Related [truth tables](glossary://truth%20table) are posted on the right as references.
 */
 //#-hidden-code
@@ -31,7 +31,7 @@ func myNOTGate(_ a: Var) -> Var{
  */
     //#-hidden-code
 
-if myNOTGate(Var(true))==Var(false) && Test(Var(false))==Var(true)
+if myNOTGate(Var(true))==Var(false) && myNOTGate(Var(false))==Var(true)
 {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Now you know how to use a NOR gate as a NOT gate. How about [this one](@next)?")
 }

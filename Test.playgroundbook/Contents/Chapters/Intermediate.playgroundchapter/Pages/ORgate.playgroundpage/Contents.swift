@@ -1,6 +1,6 @@
 /*:
-Now, let's build a OR gate using NAND gate(s) **only**.\
-You are encouraged to use as few NAND gate(s) as possible.\
+Now, let's build a [OR gate](glossary://OR%20gate) using [NAND gate(s)](glossary://NAND%20gate) **only**.\
+You are encouraged to use as few [NAND gate(s)](glossary://NAND%20gate) as possible.\
 Related [truth tables](glossary://truth%20table) are posted on the right as references.
 */
 //#-hidden-code
@@ -37,7 +37,7 @@ for i in 0..<4 {
     }
 }
 if success {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Chalenges [ahead](@next).")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
 }
 
 //#-end-hidden-code

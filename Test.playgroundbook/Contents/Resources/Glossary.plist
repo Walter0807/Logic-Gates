@@ -35,7 +35,7 @@
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
-				<string>Advanced/Advanced%1</string>
+				<string>Advanced/Advanced%201</string>
 				<key>Title</key>
 				<string>logic minimization</string>
 			</dict>
@@ -50,9 +50,105 @@ NAND(x,y) = NOT(AND(x, y)) = OR(NOT(x), NOT(Y))
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
-				<string>Advanced/Advanced%1</string>
+				<string>Advanced/Advanced%201</string>
 				<key>Title</key>
 				<string>De Morgan&apos;s laws</string>
+			</dict>
+		</dict>
+		<key>AND gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>A `true` output results **only** if all the inputs to the gate are `true`.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Basics/Logic%20Gates</string>
+				<key>Title</key>
+				<string>AND gate</string>
+			</dict>
+		</dict>
+		<key>OR gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>A `true` output results if one or both the inputs to the gate are `true`.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Basics/Logic%1Gates</string>
+				<key>Title</key>
+				<string>OR gate</string>
+			</dict>
+		</dict>
+		<key>NOT gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>If the applied input is `false` then the output becomes `true` and vice versa.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Basics/Logic%20Gates</string>
+				<key>Title</key>
+				<string>NOT gate</string>
+			</dict>
+		</dict>
+		<key>NOR gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>The output is `true` **only** if both its inputs are `false`.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Intermediate/More%20Gates</string>
+				<key>Title</key>
+				<string>NOR gate</string>
+			</dict>
+		</dict>
+		<key>NAND gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>The output is `false` **only** if both its inputs are `true`.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Intermediate/More%20Gates</string>
+				<key>Title</key>
+				<string>NAND gate</string>
+			</dict>
+		</dict>
+		<key>XOR gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>The output is `true` **only** if both its inputs are different.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Basics/Logic%20Gates</string>
+				<key>Title</key>
+				<string>NOT gate</string>
+			</dict>
+		</dict>
+		<key>XNOR gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>The output is `true` **only** if both its inputs are the same.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Intermediate/More%20Gates</string>
+				<key>Title</key>
+				<string>XNOR gate</string>
+			</dict>
+		</dict>
+		<key>universal logic gate</key>
+		<dict>
+			<key>Definition</key>
+			<string>A universal logic gate is a logic gate that can be used to construct all other logic gates. NAND gate and NOR gate are universal gates.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Intermediate/More%20Gates</string>
+				<key>Title</key>
+				<string>universal logic gate</string>
 			</dict>
 		</dict>
 	</dict>

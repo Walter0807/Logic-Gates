@@ -2,10 +2,10 @@
 
 Despite the 3 basic logic gates, another 4 gates are also widely used:
 
-- NAND gate: The output is `false` **only** if both its inputs are `true`.
-- NOR gate: The output is `true` **only** if both its inputs are `false`.
-- XNOR gate: The output is `true` **only** if both its inputs are the same.
-- XOR gate: The output is `true` **only** if both its inputs are different.
+- [NAND gate](glossary://NAND%20gate): The output is `false` **only** if both its inputs are `true`.
+- [NOR gate](glossary://NOR%20gate): The output is `true` **only** if both its inputs are `false`.
+- [XNOR gate](glossary://XNOR%20gate): The output is `true` **only** if both its inputs are the same.
+- [XOR gate](glossary://XOR%20gate): The output is `true` **only** if both its inputs are different.
 
  * Experiment:
  Again let's set the input values of the logic gates:
