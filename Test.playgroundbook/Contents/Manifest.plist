@@ -18,6 +18,7 @@
 	<array>
 		<string>Basics.playgroundchapter</string>
 		<string>Intermediate.playgroundchapter</string>
+		<string>Advanced.playgroundchapter</string>
 	</array>
 </dict>
 </plist>

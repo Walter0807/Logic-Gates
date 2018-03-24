@@ -7,32 +7,32 @@ Related [truth tables](glossary://truth%20table) are posted on the right as refe
 import PlaygroundSupport
 allowGates = [false,false,false,true,false,false,false]
 //AND OR NOT NAND NOR XOR XNOR
-func Test(_ x: Var, _ y: Var) -> Var{
 //#-end-hidden-code
+func myORGate(_ a: Var, _ b: Var) -> Var{
     //#-code-completion(everything, hide)
     //#-code-completion(description, show, "NAND(input1: Var, input2: Var)")
-    //#-code-completion(identifier, show, x, y)
+    //#-code-completion(identifier, show, a, b)
     //#-code-completion(keyword, show, var)
-    //Use x, y as the input variables.
+    //Use a, b as the input variables.
     //You may want to introduce additional local variables.
     //#-editable-code
-    var result = NAND(NAND(x,x), NAND(y,y))
+    var result = NAND(NAND(a,a), NAND(b,b))
     //#-end-editable-code
+    return result
+}
 
 /*:
  Tap *"Run My Code"* to check the result.
-[Next chapter](@next) will provide you with more fun stuff.
+ [Next chapter](@next) will provide you with more fun stuff.
  */
-    //#-hidden-code
-    return result
-}
+//#-hidden-code
 
 let correctAnswer = [Var(false), Var(true), Var(true), Var(true)]
 var success = true
 for i in 0..<4 {
-    if Test(Var(i/2), Var(i%2)) != correctAnswer[i] {
+    if myORGate(Var(i/2), Var(i%2)) != correctAnswer[i] {
         success = false
-        PlaygroundPage.current.assessmentStatus = .fail(hints: ["You know how to build a NOT gate, right?"], solution: "var result = NAND(NAND(x, x),NAND(y, y))")
+        PlaygroundPage.current.assessmentStatus = .fail(hints: ["You know how to build a NOT gate, right?"], solution: "var result = NAND(NAND(a, a),NAND(b, b))")
         break
     }
 }

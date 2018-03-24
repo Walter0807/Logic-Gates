@@ -28,6 +28,33 @@
 				<string>Logic Gates</string>
 			</dict>
 		</dict>
+		<key>logic minimization</key>
+		<dict>
+			<key>Definition</key>
+			<string>Using a variety of techniques to obtain the simplest gate-level implementation of a Boolean function. &quot;Simplicity&quot; depends on the metric being used.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Advanced/Advanced%1</string>
+				<key>Title</key>
+				<string>logic minimization</string>
+			</dict>
+		</dict>
+		<key>De Morgan&apos;s laws</key>
+		<dict>
+			<key>Definition</key>
+			<string>NOR(x,y) = NOT(OR(x, y)) = AND(NOT(x), NOT(Y))
+
+NAND(x,y) = NOT(AND(x, y)) = OR(NOT(x), NOT(Y))
+</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Advanced/Advanced%1</string>
+				<key>Title</key>
+				<string>De Morgan&apos;s laws</string>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>
