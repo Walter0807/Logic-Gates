@@ -8,13 +8,17 @@ import Foundation
 //extension MyType: CustomPlaygroundQuickLookable { /…/ } #endif
 
 public struct Var {
-    fileprivate var value: Bool
+    public fileprivate(set) var value: Bool
     public init(_ withValue: Bool) {
         value = withValue
     }
     public init(_ withInt: Int) {
         if withInt==1 {value = true}
         else {value = false}
+    }
+    public func str() -> String {
+        if value {return "1"}
+        else {return"0"}
     }
 }
 

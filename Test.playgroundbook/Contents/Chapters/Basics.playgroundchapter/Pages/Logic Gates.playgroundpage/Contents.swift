@@ -15,8 +15,8 @@
  
  * Experiment:
    Let's start by setting the input values of the logic gates:
-     1. Set the value of 📄 and 🖋 so that the output of the AND gate, 📝, is `true`.
-     2. Set the value of 🍦 and 🍨 to ensure the OR gate output, 😍, is `true`.
+     1. Set the value of 🖋 and 📄 so that the output of the AND gate, 📝, is `true`.
+     2. Set the value of 🍨 and 🍦 to ensure the OR gate output, 😍, is `true`.
      3. Set the value of 👍 to make 👎 `false`.
  
  
@@ -26,16 +26,28 @@
 //#-hidden-code
 import PlaygroundSupport
 allowGates = [true,true,true,false,false,false,false]
+
+func updateView(_ message: String) {
+    let page = PlaygroundPage.current
+    if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
+        proxy.send(.string(message))
+    }
+}
+
+
+
+
+
 //#-end-hidden-code
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, true, false)
-let 📄 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🖋 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
-let 📝 = AND(📄,🖋)
+let 🖋 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 📄 = Var(/*#-editable-code*/false/*#-end-editable-code*/)
+let 📝 = AND(🖋,📄)
 
-let 🍦 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🍨 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
-let 😍 = OR(🍦,🍨)
+let 🍨 = Var(/*#-editable-code*/true/*#-end-editable-code*/), 🍦 = Var(/*#-editable-code*/false/*#-end-editable-code*/)
+let 😍 = OR(🍨,🍦)
 
-let 👍 = Var(/*#-editable-code*/true/*#-end-editable-code*/)
+let 👍 = Var(/*#-editable-code*/false/*#-end-editable-code*/)
 let 👎 = NOT(👍)
 
 /*:
@@ -44,6 +56,10 @@ When you are ready, move on to the [next page](@next)
  */
 
 //#-hidden-code
+
+var updateString = 🖋.str() + 📄.str() + 🍨.str() + 🍦.str() + 👍.str() + 📝.str() + 😍.str() + 👎.str()
+updateView(updateString)
+
 if 📝 == Var(true) && 😍 == Var(true) && 👎 == Var(false){
     PlaygroundPage.current.assessmentStatus = .pass(message: "Now let's [proceed](@next).")
 }
@@ -52,4 +68,8 @@ else{
 
 }
 //#-end-hidden-code
+
+
+
+
 
