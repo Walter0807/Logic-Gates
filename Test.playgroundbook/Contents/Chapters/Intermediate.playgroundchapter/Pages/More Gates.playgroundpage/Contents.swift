@@ -19,6 +19,12 @@ Despite the 3 basic logic gates, another 4 gates are also widely used:
 //#-hidden-code
 import PlaygroundSupport
 allowGates = [false,false,false,true,true,true,true]
+func updateView(_ message: String) {
+    let page = PlaygroundPage.current
+    if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
+        proxy.send(.string(message))
+    }
+}
 //AND OR NOT NAND NOR XOR XNOR
 //#-end-hidden-code
 //#-code-completion(everything, hide)
@@ -35,6 +41,9 @@ let z = XNOR(m,n)
  When you are ready, move on to the [next page](@next). Interesting stuff ahead.
  */
 //#-hidden-code
+var updateString = a.str() + b.str() + c.str() + d.str() + x.str() + y.str() + m.str() + n.str() + z.str()
+updateView(updateString)
+
 if x == Var(true) && z == Var(false) {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Well done. Move [forward](@next)!")
 }

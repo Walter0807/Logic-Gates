@@ -70,7 +70,7 @@ class GridViewController: UICollectionViewController {
                                                       for: indexPath) as! GridViewCell
         
         if indexPath.section == 0 {
-            cell.label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
+            cell.label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
             cell.label.text = cols[indexPath.row]
             cell.label.textColor = UIColor.black
         } else {
