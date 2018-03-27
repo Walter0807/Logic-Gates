@@ -8,7 +8,7 @@ public class BasicGatesViewController: UIViewController{
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         truthTable = GridViewController()
         truthTable.pageNumber = 1
-        truthTable.setColumns(columns: ["A","B", "AND(A,B)", "OR(A,B)", "NOT(A)"])
+        truthTable.setColumns(columns: ["p","q", "AND(p,q)", "OR(p,q)", "NOT(p)"])
         truthTable.addRow(row: ["0", "0", "0", "0", "1"])
         truthTable.addRow(row: ["0", "1", "0", "1", "1"])
         truthTable.addRow(row: ["1", "0", "0", "1", "0"])

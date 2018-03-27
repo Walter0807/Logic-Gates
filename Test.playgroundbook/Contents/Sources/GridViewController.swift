@@ -86,6 +86,12 @@ class GridViewController: UICollectionViewController {
                 if indexPath.row == 3 {cell.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8196078431, blue: 0.1725490196, alpha: 1)}
                 if indexPath.row == 4 {cell.backgroundColor = #colorLiteral(red: 0.8470588235, green: 0.9843137255, blue: 0.2588235294, alpha: 1)}
             }
+            if pageNumber == 2 {
+                if indexPath.row == 2 {cell.backgroundColor = #colorLiteral(red: 0.4, green: 0.937254902, blue: 1, alpha: 1)}
+                if indexPath.row == 3 {cell.backgroundColor = #colorLiteral(red: 0.337254902, green: 0.6901960784, blue: 0.9725490196, alpha: 1)}
+                if indexPath.row == 4 {cell.backgroundColor = #colorLiteral(red: 0.6235294118, green: 0.3647058824, blue: 0.9647058824, alpha: 1)}
+                if indexPath.row == 5 {cell.backgroundColor = #colorLiteral(red: 1, green: 0.4156862745, blue: 0.8823529412, alpha: 1)}
+            }
         }
         else {
                 if cell.label.text=="1" {

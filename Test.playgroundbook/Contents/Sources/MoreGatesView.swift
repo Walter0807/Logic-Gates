@@ -6,6 +6,12 @@ import CoreGraphics
 public class MoreGatesView: UIView{
     public var varState = [Int]()
     public override func draw(_ rect: CGRect){
+        let trueColor = UIColor(red: 0.060, green: 0.185, blue: 0.771, alpha: 1.000)
+        let falseColor = UIColor.red
+        let trueFalse = ["F","T"]
+        let colorTF = [falseColor, trueColor]
+        
+        
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -13,7 +19,6 @@ public class MoreGatesView: UIView{
         let strokeColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
         let textForeground = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
         let fillColor4 = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
-        let color8 = UIColor(red: 0.060, green: 0.185, blue: 0.771, alpha: 1.000)
         let color9 = UIColor(red: 0.400, green: 0.936, blue: 1.000, alpha: 1.000)
         let color10 = UIColor(red: 0.336, green: 0.691, blue: 0.973, alpha: 1.000)
         let color11 = UIColor(red: 0.625, green: 0.364, blue: 0.963, alpha: 1.000)
@@ -297,57 +302,57 @@ public class MoreGatesView: UIView{
         
         
         
-        //// input 1_ Drawing
-        let input1_Rect = CGRect(x: 38, y: 115, width: 38, height: 40)
-        let input1_TextContent = "T"
-        let input1_Style = NSMutableParagraphStyle()
-        input1_Style.alignment = .center
-        let input1_FontAttributes = [
+        //// value a Drawing
+        let valueARect = CGRect(x: 38, y: 115, width: 38, height: 40)
+        let valueATextContent = trueFalse[varState[0]]
+        let valueAStyle = NSMutableParagraphStyle()
+        valueAStyle.alignment = .center
+        let valueAFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: color8,
-            .paragraphStyle: input1_Style,
+            .foregroundColor: colorTF[varState[0]],
+            .paragraphStyle: valueAStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_TextHeight: CGFloat = input1_TextContent.boundingRect(with: CGSize(width: input1_Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_FontAttributes, context: nil).height
+        let valueATextHeight: CGFloat = valueATextContent.boundingRect(with: CGSize(width: valueARect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueAFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_Rect)
-        input1_TextContent.draw(in: CGRect(x: input1_Rect.minX, y: input1_Rect.minY + (input1_Rect.height - input1_TextHeight) / 2, width: input1_Rect.width, height: input1_TextHeight), withAttributes: input1_FontAttributes)
+        context.clip(to: valueARect)
+        valueATextContent.draw(in: CGRect(x: valueARect.minX, y: valueARect.minY + (valueARect.height - valueATextHeight) / 2, width: valueARect.width, height: valueATextHeight), withAttributes: valueAFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 2 Drawing
-        let input1_2Rect = CGRect(x: 0, y: 115, width: 38, height: 40)
-        let input1_2TextContent = "A"
-        let input1_2Style = NSMutableParagraphStyle()
-        input1_2Style.alignment = .center
-        let input1_2FontAttributes = [
+        //// caption a Drawing
+        let captionARect = CGRect(x: 0, y: 115, width: 38, height: 40)
+        let captionATextContent = "A"
+        let captionAStyle = NSMutableParagraphStyle()
+        captionAStyle.alignment = .center
+        let captionAFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_2Style,
+            .paragraphStyle: captionAStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_2TextHeight: CGFloat = input1_2TextContent.boundingRect(with: CGSize(width: input1_2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_2FontAttributes, context: nil).height
+        let captionATextHeight: CGFloat = captionATextContent.boundingRect(with: CGSize(width: captionARect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionAFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_2Rect)
-        input1_2TextContent.draw(in: CGRect(x: input1_2Rect.minX, y: input1_2Rect.minY + (input1_2Rect.height - input1_2TextHeight) / 2, width: input1_2Rect.width, height: input1_2TextHeight), withAttributes: input1_2FontAttributes)
+        context.clip(to: captionARect)
+        captionATextContent.draw(in: CGRect(x: captionARect.minX, y: captionARect.minY + (captionARect.height - captionATextHeight) / 2, width: captionARect.width, height: captionATextHeight), withAttributes: captionAFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 3 Drawing
-        let input1_3Rect = CGRect(x: 0, y: 188, width: 38, height: 40)
-        let input1_3TextContent = "B"
-        let input1_3Style = NSMutableParagraphStyle()
-        input1_3Style.alignment = .center
-        let input1_3FontAttributes = [
+        //// caption b Drawing
+        let captionBRect = CGRect(x: 0, y: 188, width: 38, height: 40)
+        let captionBTextContent = "B"
+        let captionBStyle = NSMutableParagraphStyle()
+        captionBStyle.alignment = .center
+        let captionBFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
             .foregroundColor: strokeColor,
-            .paragraphStyle: input1_3Style,
+            .paragraphStyle: captionBStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_3TextHeight: CGFloat = input1_3TextContent.boundingRect(with: CGSize(width: input1_3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_3FontAttributes, context: nil).height
+        let captionBTextHeight: CGFloat = captionBTextContent.boundingRect(with: CGSize(width: captionBRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionBFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_3Rect)
-        input1_3TextContent.draw(in: CGRect(x: input1_3Rect.minX, y: input1_3Rect.minY + (input1_3Rect.height - input1_3TextHeight) / 2, width: input1_3Rect.width, height: input1_3TextHeight), withAttributes: input1_3FontAttributes)
+        context.clip(to: captionBRect)
+        captionBTextContent.draw(in: CGRect(x: captionBRect.minX, y: captionBRect.minY + (captionBRect.height - captionBTextHeight) / 2, width: captionBRect.width, height: captionBTextHeight), withAttributes: captionBFontAttributes)
         context.restoreGState()
         
         
@@ -357,279 +362,351 @@ public class MoreGatesView: UIView{
         rectangle12Path.fill()
         
         
-        //// input 1_ 5 Drawing
-        let input1_5Rect = CGRect(x: 39, y: 337, width: 38, height: 40)
-        let input1_5TextContent = "T"
-        let input1_5Style = NSMutableParagraphStyle()
-        input1_5Style.alignment = .center
-        let input1_5FontAttributes = [
+        //// value d Drawing
+        let valueDRect = CGRect(x: 39, y: 337, width: 38, height: 40)
+        let valueDTextContent = trueFalse[varState[3]]
+        let valueDStyle = NSMutableParagraphStyle()
+        valueDStyle.alignment = .center
+        let valueDFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .heavy),
-            .foregroundColor: color8,
-            .paragraphStyle: input1_5Style,
+            .foregroundColor: colorTF[varState[3]],
+            .paragraphStyle: valueDStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_5TextHeight: CGFloat = input1_5TextContent.boundingRect(with: CGSize(width: input1_5Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_5FontAttributes, context: nil).height
+        let valueDTextHeight: CGFloat = valueDTextContent.boundingRect(with: CGSize(width: valueDRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueDFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_5Rect)
-        input1_5TextContent.draw(in: CGRect(x: input1_5Rect.minX, y: input1_5Rect.minY + (input1_5Rect.height - input1_5TextHeight) / 2, width: input1_5Rect.width, height: input1_5TextHeight), withAttributes: input1_5FontAttributes)
+        context.clip(to: valueDRect)
+        valueDTextContent.draw(in: CGRect(x: valueDRect.minX, y: valueDRect.minY + (valueDRect.height - valueDTextHeight) / 2, width: valueDRect.width, height: valueDTextHeight), withAttributes: valueDFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 4 Drawing
-        let input1_4Rect = CGRect(x: 1, y: 264, width: 38, height: 39)
-        let input1_4TextContent = "C"
-        let input1_4Style = NSMutableParagraphStyle()
-        input1_4Style.alignment = .center
-        let input1_4FontAttributes = [
+        //// caption c Drawing
+        let captionCRect = CGRect(x: 1, y: 264, width: 38, height: 39)
+        let captionCTextContent = "C"
+        let captionCStyle = NSMutableParagraphStyle()
+        captionCStyle.alignment = .center
+        let captionCFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_4Style,
+            .paragraphStyle: captionCStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_4TextHeight: CGFloat = input1_4TextContent.boundingRect(with: CGSize(width: input1_4Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_4FontAttributes, context: nil).height
+        let captionCTextHeight: CGFloat = captionCTextContent.boundingRect(with: CGSize(width: captionCRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionCFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_4Rect)
-        input1_4TextContent.draw(in: CGRect(x: input1_4Rect.minX, y: input1_4Rect.minY + (input1_4Rect.height - input1_4TextHeight) / 2, width: input1_4Rect.width, height: input1_4TextHeight), withAttributes: input1_4FontAttributes)
+        context.clip(to: captionCRect)
+        captionCTextContent.draw(in: CGRect(x: captionCRect.minX, y: captionCRect.minY + (captionCRect.height - captionCTextHeight) / 2, width: captionCRect.width, height: captionCTextHeight), withAttributes: captionCFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 6 Drawing
-        let input1_6Rect = CGRect(x: 1, y: 336, width: 38, height: 40)
-        let input1_6TextContent = "D"
-        let input1_6Style = NSMutableParagraphStyle()
-        input1_6Style.alignment = .center
-        let input1_6FontAttributes = [
+        //// caption d Drawing
+        let captionDRect = CGRect(x: 1, y: 336, width: 38, height: 40)
+        let captionDTextContent = "D"
+        let captionDStyle = NSMutableParagraphStyle()
+        captionDStyle.alignment = .center
+        let captionDFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_6Style,
+            .paragraphStyle: captionDStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_6TextHeight: CGFloat = input1_6TextContent.boundingRect(with: CGSize(width: input1_6Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_6FontAttributes, context: nil).height
+        let captionDTextHeight: CGFloat = captionDTextContent.boundingRect(with: CGSize(width: captionDRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionDFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_6Rect)
-        input1_6TextContent.draw(in: CGRect(x: input1_6Rect.minX, y: input1_6Rect.minY + (input1_6Rect.height - input1_6TextHeight) / 2, width: input1_6Rect.width, height: input1_6TextHeight), withAttributes: input1_6FontAttributes)
+        context.clip(to: captionDRect)
+        captionDTextContent.draw(in: CGRect(x: captionDRect.minX, y: captionDRect.minY + (captionDRect.height - captionDTextHeight) / 2, width: captionDRect.width, height: captionDTextHeight), withAttributes: captionDFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 7 Drawing
-        let input1_7Rect = CGRect(x: 190, y: 169, width: 38, height: 40)
-        let input1_7TextContent = "X"
-        let input1_7Style = NSMutableParagraphStyle()
-        input1_7Style.alignment = .center
-        let input1_7FontAttributes = [
+        //// caption x Drawing
+        let captionXRect = CGRect(x: 190, y: 169, width: 38, height: 40)
+        let captionXTextContent = "X"
+        let captionXStyle = NSMutableParagraphStyle()
+        captionXStyle.alignment = .center
+        let captionXFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_7Style,
+            .paragraphStyle: captionXStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_7TextHeight: CGFloat = input1_7TextContent.boundingRect(with: CGSize(width: input1_7Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_7FontAttributes, context: nil).height
+        let captionXTextHeight: CGFloat = captionXTextContent.boundingRect(with: CGSize(width: captionXRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionXFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_7Rect)
-        input1_7TextContent.draw(in: CGRect(x: input1_7Rect.minX, y: input1_7Rect.minY + (input1_7Rect.height - input1_7TextHeight) / 2, width: input1_7Rect.width, height: input1_7TextHeight), withAttributes: input1_7FontAttributes)
+        context.clip(to: captionXRect)
+        captionXTextContent.draw(in: CGRect(x: captionXRect.minX, y: captionXRect.minY + (captionXRect.height - captionXTextHeight) / 2, width: captionXRect.width, height: captionXTextHeight), withAttributes: captionXFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 8 Drawing
-        let input1_8Rect = CGRect(x: 190, y: 282, width: 38, height: 40)
-        let input1_8TextContent = "Y"
-        let input1_8Style = NSMutableParagraphStyle()
-        input1_8Style.alignment = .center
-        let input1_8FontAttributes = [
+        //// caption y Drawing
+        let captionYRect = CGRect(x: 190, y: 282, width: 38, height: 40)
+        let captionYTextContent = "Y"
+        let captionYStyle = NSMutableParagraphStyle()
+        captionYStyle.alignment = .center
+        let captionYFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_8Style,
+            .paragraphStyle: captionYStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_8TextHeight: CGFloat = input1_8TextContent.boundingRect(with: CGSize(width: input1_8Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_8FontAttributes, context: nil).height
+        let captionYTextHeight: CGFloat = captionYTextContent.boundingRect(with: CGSize(width: captionYRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionYFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_8Rect)
-        input1_8TextContent.draw(in: CGRect(x: input1_8Rect.minX, y: input1_8Rect.minY + (input1_8Rect.height - input1_8TextHeight) / 2, width: input1_8Rect.width, height: input1_8TextHeight), withAttributes: input1_8FontAttributes)
+        context.clip(to: captionYRect)
+        captionYTextContent.draw(in: CGRect(x: captionYRect.minX, y: captionYRect.minY + (captionYRect.height - captionYTextHeight) / 2, width: captionYRect.width, height: captionYTextHeight), withAttributes: captionYFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 9 Drawing
-        let input1_9Rect = CGRect(x: 320, y: 204, width: 38, height: 40)
-        let input1_9TextContent = "M"
-        let input1_9Style = NSMutableParagraphStyle()
-        input1_9Style.alignment = .center
-        let input1_9FontAttributes = [
+        //// caption m Drawing
+        let captionMRect = CGRect(x: 320, y: 213, width: 38, height: 40)
+        let captionMTextContent = "M"
+        let captionMStyle = NSMutableParagraphStyle()
+        captionMStyle.alignment = .center
+        let captionMFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_9Style,
+            .paragraphStyle: captionMStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_9TextHeight: CGFloat = input1_9TextContent.boundingRect(with: CGSize(width: input1_9Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_9FontAttributes, context: nil).height
+        let captionMTextHeight: CGFloat = captionMTextContent.boundingRect(with: CGSize(width: captionMRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionMFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_9Rect)
-        input1_9TextContent.draw(in: CGRect(x: input1_9Rect.minX, y: input1_9Rect.minY + (input1_9Rect.height - input1_9TextHeight) / 2, width: input1_9Rect.width, height: input1_9TextHeight), withAttributes: input1_9FontAttributes)
+        context.clip(to: captionMRect)
+        captionMTextContent.draw(in: CGRect(x: captionMRect.minX, y: captionMRect.minY + (captionMRect.height - captionMTextHeight) / 2, width: captionMRect.width, height: captionMTextHeight), withAttributes: captionMFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 10 Drawing
-        let input1_10Rect = CGRect(x: 317, y: 339, width: 37, height: 40)
-        let input1_10TextContent = "N"
-        let input1_10Style = NSMutableParagraphStyle()
-        input1_10Style.alignment = .center
-        let input1_10FontAttributes = [
+        //// caption n Drawing
+        let captionNRect = CGRect(x: 317, y: 336, width: 37, height: 40)
+        let captionNTextContent = "N"
+        let captionNStyle = NSMutableParagraphStyle()
+        captionNStyle.alignment = .center
+        let captionNFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_10Style,
+            .paragraphStyle: captionNStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_10TextHeight: CGFloat = input1_10TextContent.boundingRect(with: CGSize(width: input1_10Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_10FontAttributes, context: nil).height
+        let captionNTextHeight: CGFloat = captionNTextContent.boundingRect(with: CGSize(width: captionNRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionNFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_10Rect)
-        input1_10TextContent.draw(in: CGRect(x: input1_10Rect.minX, y: input1_10Rect.minY + (input1_10Rect.height - input1_10TextHeight) / 2, width: input1_10Rect.width, height: input1_10TextHeight), withAttributes: input1_10FontAttributes)
+        context.clip(to: captionNRect)
+        captionNTextContent.draw(in: CGRect(x: captionNRect.minX, y: captionNRect.minY + (captionNRect.height - captionNTextHeight) / 2, width: captionNRect.width, height: captionNTextHeight), withAttributes: captionNFontAttributes)
         context.restoreGState()
         
         
-        //// Rectangle 15 Drawing
-        let rectangle15Path = UIBezierPath(rect: CGRect(x: 443, y: 292, width: 27, height: 4))
+        //// outputline z Drawing
+        let outputlineZPath = UIBezierPath(rect: CGRect(x: 443, y: 292, width: 27, height: 4))
         UIColor.black.setFill()
-        rectangle15Path.fill()
+        outputlineZPath.fill()
         
         
-        //// input 1_ 11 Drawing
-        let input1_11Rect = CGRect(x: 466, y: 274, width: 38, height: 40)
-        let input1_11TextContent = "Z"
-        let input1_11Style = NSMutableParagraphStyle()
-        input1_11Style.alignment = .center
-        let input1_11FontAttributes = [
+        //// caption Z Drawing
+        let captionZRect = CGRect(x: 466, y: 274, width: 38, height: 40)
+        let captionZTextContent = "Z"
+        let captionZStyle = NSMutableParagraphStyle()
+        captionZStyle.alignment = .center
+        let captionZFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: input1_11Style,
+            .paragraphStyle: captionZStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_11TextHeight: CGFloat = input1_11TextContent.boundingRect(with: CGSize(width: input1_11Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_11FontAttributes, context: nil).height
+        let captionZTextHeight: CGFloat = captionZTextContent.boundingRect(with: CGSize(width: captionZRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionZFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_11Rect)
-        input1_11TextContent.draw(in: CGRect(x: input1_11Rect.minX, y: input1_11Rect.minY + (input1_11Rect.height - input1_11TextHeight) / 2, width: input1_11Rect.width, height: input1_11TextHeight), withAttributes: input1_11FontAttributes)
+        context.clip(to: captionZRect)
+        captionZTextContent.draw(in: CGRect(x: captionZRect.minX, y: captionZRect.minY + (captionZRect.height - captionZTextHeight) / 2, width: captionZRect.width, height: captionZTextHeight), withAttributes: captionZFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 12 Drawing
-        let input1_12Rect = CGRect(x: 504, y: 274, width: 38, height: 40)
-        let input1_12TextContent = "T"
-        let input1_12Style = NSMutableParagraphStyle()
-        input1_12Style.alignment = .center
-        let input1_12FontAttributes = [
+        //// value Z Drawing
+        let valueZRect = CGRect(x: 504, y: 274, width: 38, height: 40)
+        let valueZTextContent = trueFalse[varState[8]]
+        let valueZStyle = NSMutableParagraphStyle()
+        valueZStyle.alignment = .center
+        let valueZFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: color8,
-            .paragraphStyle: input1_12Style,
+            .foregroundColor: colorTF[varState[8]],
+            .paragraphStyle: valueZStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_12TextHeight: CGFloat = input1_12TextContent.boundingRect(with: CGSize(width: input1_12Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_12FontAttributes, context: nil).height
+        let valueZTextHeight: CGFloat = valueZTextContent.boundingRect(with: CGSize(width: valueZRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueZFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_12Rect)
-        input1_12TextContent.draw(in: CGRect(x: input1_12Rect.minX, y: input1_12Rect.minY + (input1_12Rect.height - input1_12TextHeight) / 2, width: input1_12Rect.width, height: input1_12TextHeight), withAttributes: input1_12FontAttributes)
+        context.clip(to: valueZRect)
+        valueZTextContent.draw(in: CGRect(x: valueZRect.minX, y: valueZRect.minY + (valueZRect.height - valueZTextHeight) / 2, width: valueZRect.width, height: valueZTextHeight), withAttributes: valueZFontAttributes)
         context.restoreGState()
         
         
-        //// Output Drawing
-        let outputRect = CGRect(x: 38, y: 188, width: 41, height: 43)
-        let outputTextContent = "F"
-        let outputStyle = NSMutableParagraphStyle()
-        outputStyle.alignment = .center
-        let outputFontAttributes = [
+        //// value B Drawing
+        let valueBRect = CGRect(x: 38, y: 188, width: 41, height: 43)
+        let valueBTextContent = trueFalse[varState[1]]
+        let valueBStyle = NSMutableParagraphStyle()
+        valueBStyle.alignment = .center
+        let valueBFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: UIColor.red,
-            .paragraphStyle: outputStyle,
+            .foregroundColor: colorTF[varState[1]],
+            .paragraphStyle: valueBStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let outputTextHeight: CGFloat = outputTextContent.boundingRect(with: CGSize(width: outputRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: outputFontAttributes, context: nil).height
+        let valueBTextHeight: CGFloat = valueBTextContent.boundingRect(with: CGSize(width: valueBRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueBFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: outputRect)
-        outputTextContent.draw(in: CGRect(x: outputRect.minX, y: outputRect.minY + (outputRect.height - outputTextHeight) / 2, width: outputRect.width, height: outputTextHeight), withAttributes: outputFontAttributes)
+        context.clip(to: valueBRect)
+        valueBTextContent.draw(in: CGRect(x: valueBRect.minX, y: valueBRect.minY + (valueBRect.height - valueBTextHeight) / 2, width: valueBRect.width, height: valueBTextHeight), withAttributes: valueBFontAttributes)
         context.restoreGState()
         
         
-        //// Output 2 Drawing
-        let output2Rect = CGRect(x: 39, y: 260, width: 41, height: 43)
-        let output2TextContent = "F"
-        let output2Style = NSMutableParagraphStyle()
-        output2Style.alignment = .center
-        let output2FontAttributes = [
+        //// value C Drawing
+        let valueCRect = CGRect(x: 39, y: 260, width: 41, height: 43)
+        let valueCTextContent = trueFalse[varState[1]]
+        let valueCStyle = NSMutableParagraphStyle()
+        valueCStyle.alignment = .center
+        let valueCFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: UIColor.red,
-            .paragraphStyle: output2Style,
+            .foregroundColor: colorTF[varState[2]],
+            .paragraphStyle: valueCStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let output2TextHeight: CGFloat = output2TextContent.boundingRect(with: CGSize(width: output2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: output2FontAttributes, context: nil).height
+        let valueCTextHeight: CGFloat = valueCTextContent.boundingRect(with: CGSize(width: valueCRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueCFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: output2Rect)
-        output2TextContent.draw(in: CGRect(x: output2Rect.minX, y: output2Rect.minY + (output2Rect.height - output2TextHeight) / 2, width: output2Rect.width, height: output2TextHeight), withAttributes: output2FontAttributes)
+        context.clip(to: valueCRect)
+        valueCTextContent.draw(in: CGRect(x: valueCRect.minX, y: valueCRect.minY + (valueCRect.height - valueCTextHeight) / 2, width: valueCRect.width, height: valueCTextHeight), withAttributes: valueCFontAttributes)
         context.restoreGState()
         
         
-        //// Output 3 Drawing
-        let output3Rect = CGRect(x: 222, y: 277, width: 41, height: 43)
-        let output3TextContent = "F"
-        let output3Style = NSMutableParagraphStyle()
-        output3Style.alignment = .center
-        let output3FontAttributes = [
+        //// value Y Drawing
+        let valueYRect = CGRect(x: 222, y: 277, width: 41, height: 43)
+        let valueYTextContent = trueFalse[varState[1]]
+        let valueYStyle = NSMutableParagraphStyle()
+        valueYStyle.alignment = .center
+        let valueYFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: UIColor.red,
-            .paragraphStyle: output3Style,
+            .foregroundColor: colorTF[varState[5]],
+            .paragraphStyle: valueYStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let output3TextHeight: CGFloat = output3TextContent.boundingRect(with: CGSize(width: output3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: output3FontAttributes, context: nil).height
+        let valueYTextHeight: CGFloat = valueYTextContent.boundingRect(with: CGSize(width: valueYRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueYFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: output3Rect)
-        output3TextContent.draw(in: CGRect(x: output3Rect.minX, y: output3Rect.minY + (output3Rect.height - output3TextHeight) / 2, width: output3Rect.width, height: output3TextHeight), withAttributes: output3FontAttributes)
+        context.clip(to: valueYRect)
+        valueYTextContent.draw(in: CGRect(x: valueYRect.minX, y: valueYRect.minY + (valueYRect.height - valueYTextHeight) / 2, width: valueYRect.width, height: valueYTextHeight), withAttributes: valueYFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 13 Drawing
-        let input1_13Rect = CGRect(x: 225, y: 169, width: 38, height: 40)
-        let input1_13TextContent = "T"
-        let input1_13Style = NSMutableParagraphStyle()
-        input1_13Style.alignment = .center
-        let input1_13FontAttributes = [
+        //// value X Drawing
+        let valueXRect = CGRect(x: 225, y: 169, width: 38, height: 40)
+        let valueXTextContent = trueFalse[varState[4]]
+        let valueXStyle = NSMutableParagraphStyle()
+        valueXStyle.alignment = .center
+        let valueXFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: color8,
-            .paragraphStyle: input1_13Style,
+            .foregroundColor: colorTF[varState[4]],
+            .paragraphStyle: valueXStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_13TextHeight: CGFloat = input1_13TextContent.boundingRect(with: CGSize(width: input1_13Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_13FontAttributes, context: nil).height
+        let valueXTextHeight: CGFloat = valueXTextContent.boundingRect(with: CGSize(width: valueXRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueXFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_13Rect)
-        input1_13TextContent.draw(in: CGRect(x: input1_13Rect.minX, y: input1_13Rect.minY + (input1_13Rect.height - input1_13TextHeight) / 2, width: input1_13Rect.width, height: input1_13TextHeight), withAttributes: input1_13FontAttributes)
+        context.clip(to: valueXRect)
+        valueXTextContent.draw(in: CGRect(x: valueXRect.minX, y: valueXRect.minY + (valueXRect.height - valueXTextHeight) / 2, width: valueXRect.width, height: valueXTextHeight), withAttributes: valueXFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 14 Drawing
-        let input1_14Rect = CGRect(x: 358, y: 203, width: 38, height: 40)
-        let input1_14TextContent = "T"
-        let input1_14Style = NSMutableParagraphStyle()
-        input1_14Style.alignment = .center
-        let input1_14FontAttributes = [
+        //// value M Drawing
+        let valueMRect = CGRect(x: 358, y: 212, width: 38, height: 40)
+        let valueMTextContent = trueFalse[varState[6]]
+        let valueMStyle = NSMutableParagraphStyle()
+        valueMStyle.alignment = .center
+        let valueMFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: color8,
-            .paragraphStyle: input1_14Style,
+            .foregroundColor: colorTF[varState[6]],
+            .paragraphStyle: valueMStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_14TextHeight: CGFloat = input1_14TextContent.boundingRect(with: CGSize(width: input1_14Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_14FontAttributes, context: nil).height
+        let valueMTextHeight: CGFloat = valueMTextContent.boundingRect(with: CGSize(width: valueMRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueMFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_14Rect)
-        input1_14TextContent.draw(in: CGRect(x: input1_14Rect.minX, y: input1_14Rect.minY + (input1_14Rect.height - input1_14TextHeight) / 2, width: input1_14Rect.width, height: input1_14TextHeight), withAttributes: input1_14FontAttributes)
+        context.clip(to: valueMRect)
+        valueMTextContent.draw(in: CGRect(x: valueMRect.minX, y: valueMRect.minY + (valueMRect.height - valueMTextHeight) / 2, width: valueMRect.width, height: valueMTextHeight), withAttributes: valueMFontAttributes)
         context.restoreGState()
         
         
-        //// input 1_ 15 Drawing
-        let input1_15Rect = CGRect(x: 358, y: 339, width: 38, height: 40)
-        let input1_15TextContent = "T"
-        let input1_15Style = NSMutableParagraphStyle()
-        input1_15Style.alignment = .center
-        let input1_15FontAttributes = [
+        //// value N Drawing
+        let valueNRect = CGRect(x: 358, y: 336, width: 38, height: 40)
+        let valueNTextContent = trueFalse[varState[7]]
+        let valueNStyle = NSMutableParagraphStyle()
+        valueNStyle.alignment = .center
+        let valueNFontAttributes = [
             .font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            .foregroundColor: color8,
-            .paragraphStyle: input1_15Style,
+            .foregroundColor: colorTF[varState[7]],
+            .paragraphStyle: valueNStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let input1_15TextHeight: CGFloat = input1_15TextContent.boundingRect(with: CGSize(width: input1_15Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: input1_15FontAttributes, context: nil).height
+        let valueNTextHeight: CGFloat = valueNTextContent.boundingRect(with: CGSize(width: valueNRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: valueNFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: input1_15Rect)
-        input1_15TextContent.draw(in: CGRect(x: input1_15Rect.minX, y: input1_15Rect.minY + (input1_15Rect.height - input1_15TextHeight) / 2, width: input1_15Rect.width, height: input1_15TextHeight), withAttributes: input1_15FontAttributes)
+        context.clip(to: valueNRect)
+        valueNTextContent.draw(in: CGRect(x: valueNRect.minX, y: valueNRect.minY + (valueNRect.height - valueNTextHeight) / 2, width: valueNRect.width, height: valueNTextHeight), withAttributes: valueNFontAttributes)
+        context.restoreGState()
+        
+        
+        //// gate caption Drawing
+        let gateCaptionRect = CGRect(x: 65, y: 226, width: 109, height: 22)
+        let gateCaptionTextContent = "NAND Gate"
+        let gateCaptionStyle = NSMutableParagraphStyle()
+        gateCaptionStyle.alignment = .center
+        let gateCaptionFontAttributes = [
+            .font: UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .bold),
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: gateCaptionStyle,
+            ] as [NSAttributedStringKey: Any]
+        
+        let gateCaptionTextHeight: CGFloat = gateCaptionTextContent.boundingRect(with: CGSize(width: gateCaptionRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: gateCaptionFontAttributes, context: nil).height
+        context.saveGState()
+        context.clip(to: gateCaptionRect)
+        gateCaptionTextContent.draw(in: CGRect(x: gateCaptionRect.minX, y: gateCaptionRect.minY + (gateCaptionRect.height - gateCaptionTextHeight) / 2, width: gateCaptionRect.width, height: gateCaptionTextHeight), withAttributes: gateCaptionFontAttributes)
+        context.restoreGState()
+        
+        
+        //// gate caption 2 Drawing
+        let gateCaption2Rect = CGRect(x: 65, y: 376, width: 109, height: 22)
+        let gateCaption2TextContent = "NOR Gate"
+        let gateCaption2Style = NSMutableParagraphStyle()
+        gateCaption2Style.alignment = .center
+        let gateCaption2FontAttributes = [
+            .font: UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .bold),
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: gateCaption2Style,
+            ] as [NSAttributedStringKey: Any]
+        
+        let gateCaption2TextHeight: CGFloat = gateCaption2TextContent.boundingRect(with: CGSize(width: gateCaption2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: gateCaption2FontAttributes, context: nil).height
+        context.saveGState()
+        context.clip(to: gateCaption2Rect)
+        gateCaption2TextContent.draw(in: CGRect(x: gateCaption2Rect.minX, y: gateCaption2Rect.minY + (gateCaption2Rect.height - gateCaption2TextHeight) / 2, width: gateCaption2Rect.width, height: gateCaption2TextHeight), withAttributes: gateCaption2FontAttributes)
+        context.restoreGState()
+        
+        
+        //// gate caption 3 Drawing
+        let gateCaption3Rect = CGRect(x: 204, y: 322, width: 109, height: 22)
+        let gateCaption3TextContent = "XOR Gate"
+        let gateCaption3Style = NSMutableParagraphStyle()
+        gateCaption3Style.alignment = .center
+        let gateCaption3FontAttributes = [
+            .font: UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .bold),
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: gateCaption3Style,
+            ] as [NSAttributedStringKey: Any]
+        
+        let gateCaption3TextHeight: CGFloat = gateCaption3TextContent.boundingRect(with: CGSize(width: gateCaption3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: gateCaption3FontAttributes, context: nil).height
+        context.saveGState()
+        context.clip(to: gateCaption3Rect)
+        gateCaption3TextContent.draw(in: CGRect(x: gateCaption3Rect.minX, y: gateCaption3Rect.minY + (gateCaption3Rect.height - gateCaption3TextHeight) / 2, width: gateCaption3Rect.width, height: gateCaption3TextHeight), withAttributes: gateCaption3FontAttributes)
+        context.restoreGState()
+        
+        
+        //// gate caption 4 Drawing
+        let gateCaption4Rect = CGRect(x: 334, y: 379, width: 109, height: 22)
+        let gateCaption4TextContent = "XNOR Gate"
+        let gateCaption4Style = NSMutableParagraphStyle()
+        gateCaption4Style.alignment = .center
+        let gateCaption4FontAttributes = [
+            .font: UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .bold),
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: gateCaption4Style,
+            ] as [NSAttributedStringKey: Any]
+        
+        let gateCaption4TextHeight: CGFloat = gateCaption4TextContent.boundingRect(with: CGSize(width: gateCaption4Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: gateCaption4FontAttributes, context: nil).height
+        context.saveGState()
+        context.clip(to: gateCaption4Rect)
+        gateCaption4TextContent.draw(in: CGRect(x: gateCaption4Rect.minX, y: gateCaption4Rect.minY + (gateCaption4Rect.height - gateCaption4TextHeight) / 2, width: gateCaption4Rect.width, height: gateCaption4TextHeight), withAttributes: gateCaption4FontAttributes)
         context.restoreGState()
 
     }

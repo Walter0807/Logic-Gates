@@ -7,15 +7,15 @@ public class MoreGatesViewController: UIViewController{
     public override func viewDidLoad() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         truthTable = GridViewController()
-        truthTable.pageNumber = 1
-        truthTable.setColumns(columns: ["A","B", "NAND(A,B)", "NOR(A,B)", "XNOR(A,B)", "XOR(A,B)"])
+        truthTable.pageNumber = 2
+        truthTable.setColumns(columns: ["p","q", "NAND(p,q)", "NOR(p,q)", "XNOR(p,q)", "XOR(p,q)"])
         truthTable.addRow(row: ["0", "0", "1", "1", "1", "0"])
         truthTable.addRow(row: ["0", "1", "1", "0", "0", "1"])
         truthTable.addRow(row: ["1", "0", "1", "0", "0", "1"])
         truthTable.addRow(row: ["1", "1", "0", "0", "1", "0"])
         view.addSubview(truthTable.view)
         gatesPreview = MoreGatesView(frame: CGRect(x:0, y:180, width:view.frame.width, height:500))
-        gatesPreview.varState = [1,0,1,0,0,0,1,1]
+        gatesPreview.varState = [1,0,0,1,1,0,1,1,1]
         gatesPreview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(gatesPreview)
         
