@@ -22,14 +22,15 @@ public class BasicGatesViewController: UIViewController{
     }
     
     func setGatesPreview() {
-        gatesPreview = BasicGatesView(frame: CGRect(x:view.frame.width/16, y:180, width:view.frame.width*7/8, height:500))
+        gatesPreview = BasicGatesView(frame: placeMiddleHalf(view, 200, 400, 500))
         gatesPreview.varState = [1,0,1,0,0,0,1,1]
-        gatesPreview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        gatesPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(gatesPreview)
     }
     
     public override func viewDidLayoutSubviews() {
         truthTable.view.frame = CGRect(x:view.frame.width/16, y:20, width:view.frame.width*7/8, height:140)
+        //truthTable.view.frame = placeMiddleHalf(view, 20, 500, 140)
         truthTable.view.layer.borderWidth = 1.5
     }
     

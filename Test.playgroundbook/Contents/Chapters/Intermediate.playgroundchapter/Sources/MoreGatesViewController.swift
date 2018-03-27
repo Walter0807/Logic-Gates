@@ -22,9 +22,9 @@ public class MoreGatesViewController: UIViewController{
     }
     
     func setGatesPreview() {
-        gatesPreview = MoreGatesView(frame: CGRect(x:0, y:220, width:view.frame.width, height:500))
+        gatesPreview = MoreGatesView(frame: placeMiddleHalf(view, 200, 500, 500))
         gatesPreview.varState = [1,0,0,1,1,0,1,1,1]
-        gatesPreview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        gatesPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(gatesPreview)
     }
     

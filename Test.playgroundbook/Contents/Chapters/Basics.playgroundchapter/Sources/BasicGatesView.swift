@@ -12,13 +12,7 @@ public class BasicGatesView: UIView{
         setNeedsDisplay()
     }
     
-    func drawBasicGates(frame: CGRect = CGRect(x: 0, y: 0, width: 542, height: 501)) {
-        
-        let trueColor = UIColor(red: 0.060, green: 0.185, blue: 0.771, alpha: 1.000)
-        let falseColor = UIColor.red
-        let trueFalse = ["F","T"]
-        let colorTF = [falseColor, trueColor]
-        
+    func drawBasicGates(frame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 500)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
