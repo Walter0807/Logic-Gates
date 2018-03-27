@@ -1,17 +1,17 @@
 import Foundation
 import UIKit
 
-class GridViewController: UICollectionViewController {
-    //表头数据
+public class GridViewController: UICollectionViewController {
+    
     var cols: [String]! = []
-    //行数据
+
     var rows: [[Any]]! = []
     public var pageNumber: Int = 0
     //private var selectedColIdx = -1
 
     //private var asc = true
     
-    init() {
+    public init() {
 
         let layout = GridViewLayout()
         super.init(collectionViewLayout: layout)
@@ -25,46 +25,46 @@ class GridViewController: UICollectionViewController {
         collectionView!.bounces = false
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("GridViewController.init(coder:) has not been implemented")
     }
     
-    func setColumns(columns: [String]) {
+    public func setColumns(columns: [String]) {
         cols = columns
     }
     
-    func addRow(row: [Any]) {
+    public func addRow(row: [Any]) {
         rows.append(row)
         collectionView!.collectionViewLayout.invalidateLayout()
         collectionView!.reloadData()
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidLayoutSubviews() {
+   public override func viewDidLayoutSubviews() {
         collectionView!.frame = CGRect(x:0, y:0,
                                        width:view.frame.width, height:view.frame.height)
     }
     
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public override func numberOfSections(in collectionView: UICollectionView) -> Int {
             if cols.isEmpty {
                 return 0
             }
             return rows.count + 1
     }
     
-    override func collectionView(_ collectionView: UICollectionView,
+    public override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         return cols.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView,
+    public override func collectionView(_ collectionView: UICollectionView,
                             cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                       for: indexPath) as! GridViewCell
