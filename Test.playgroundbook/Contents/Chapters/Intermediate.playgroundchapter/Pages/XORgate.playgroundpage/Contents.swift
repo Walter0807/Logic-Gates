@@ -21,6 +21,7 @@ func myNOTGate(_ a: Var) -> Var{
     //#-code-completion(everything, hide)
     //#-code-completion(description, show, "NOR(input1: Var, input2: Var)")
     //#-code-completion(identifier, show, a)
+    //#-code-completion(keyword, show, let)
     //Use a as the input variable.
     var result = /*#-editable-code your expression here*/NOR(a,a)/*#-end-editable-code*/
     return result

@@ -4,8 +4,9 @@ Despite the 3 basic logic gates, another 4 gates are also widely used:
 
 - [NAND gate](glossary://NAND%20gate): The output is `false` **only** if both its inputs are `true`.
 - [NOR gate](glossary://NOR%20gate): The output is `true` **only** if both its inputs are `false`.
-- [XNOR gate](glossary://XNOR%20gate): The output is `true` **only** if both its inputs are the same.
 - [XOR gate](glossary://XOR%20gate): The output is `true` **only** if both its inputs are different.
+- [XNOR gate](glossary://XNOR%20gate): The output is `true` **only** if both its inputs are the same.
+
 
  * Experiment:
  Again let's set the input values of the logic gates:
@@ -29,10 +30,9 @@ func updateView(_ message: String) {
 //#-end-hidden-code
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, true, false)
-let a = Var(true), b = Var(/*#-editable-code*/false/*#-end-editable-code*/)
+let a = Var(true), b = Var(/*#-editable-code*/<#T##boolean value##Bool#>/*#-end-editable-code*/)
 let x = NAND(a,b)
-
-let c = Var(false), d = Var(/*#-editable-code*/true/*#-end-editable-code*/)
+let c = Var(false), d = Var(/*#-editable-code*/<#T##boolean value##Bool#>/*#-end-editable-code*/)
 let y = NOR(c,d)
 let m = XOR(x,y), n = Var(true)
 let z = XNOR(m,n)

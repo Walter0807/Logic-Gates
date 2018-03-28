@@ -13,17 +13,17 @@ public class MoreGatesViewController: UIViewController{
     func setTruthTable() {
         truthTable = GridViewController()
         truthTable.pageNumber = 2
-        truthTable.setColumns(columns: ["p","q", "NAND(p,q)", "NOR(p,q)", "XNOR(p,q)", "XOR(p,q)"])
-        truthTable.addRow(row: ["0", "0", "1", "1", "1", "0"])
-        truthTable.addRow(row: ["0", "1", "1", "0", "0", "1"])
-        truthTable.addRow(row: ["1", "0", "1", "0", "0", "1"])
-        truthTable.addRow(row: ["1", "1", "0", "0", "1", "0"])
+        truthTable.setColumns(columns: ["p","q", "NAND(p,q)", "NOR(p,q)", "XOR(p,q)", "XNOR(p,q)"])
+        truthTable.addRow(row: ["0", "0", "1", "1", "0", "1"])
+        truthTable.addRow(row: ["0", "1", "1", "0", "1", "0"])
+        truthTable.addRow(row: ["1", "0", "1", "0", "1", "0"])
+        truthTable.addRow(row: ["1", "1", "0", "0", "0", "1"])
         view.addSubview(truthTable.view)
     }
     
     func setGatesPreview() {
-        gatesPreview = MoreGatesView(frame: placeMiddleHalf(view, 200, 500, 500))
-        gatesPreview.varState = [1,0,0,1,1,0,1,1,1]
+        gatesPreview = MoreGatesView(frame: placeMiddleHalf(view, 200, 540, 500))
+        gatesPreview.varState = [1,2,0,2,2,2,2,1,2]
         gatesPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(gatesPreview)
     }

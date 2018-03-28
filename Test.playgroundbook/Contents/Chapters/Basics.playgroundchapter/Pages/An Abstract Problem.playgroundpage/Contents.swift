@@ -21,14 +21,19 @@ func updateView(_ message: String) {
 func Test(_ a: Var, _ b: Var) -> Var{
     //#-end-hidden-code
     //#-code-completion(everything, hide)
+    //#-code-completion(keyword, show, let)
     //#-code-completion(description, show, "AND(input1: Var, input2: Var)", "OR(input1: Var, input2: Var)", "NOT(input: Var)")
     //#-code-completion(identifier, show, a, b, c, d)
+    //#-code-completion(currentmodule, show)
+    //#-code-completion(identifier, hide, correctAnswer, success, cnt, timer, updateString)
+    //#-code-completion(description, hide, "Test(a: Var, b: Var)", "updateView(message: String)", "checkcnt(fl: Int)")
     //#-editable-code
     let c = OR(a,b)
     let d = AND(a,b)
     //#-end-editable-code
     //Calculate the output
     let z = /*#-editable-code*/ AND(c, NOT(d)) /*#-end-editable-code*/
+    
 /*:
 Tap *"Run My Code"* to check the result.
 [Next chapter](@next) will introduce more **logic gates**.

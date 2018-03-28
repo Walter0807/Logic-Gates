@@ -8,5 +8,9 @@
 	<string>Build Your OR gate</string>
 	<key>LiveViewMode</key>
 	<string>VisibleByDefault</string>
+	<key>PlaygroundLoggingMode</key>
+	<string>Off</string>
+	<key>LiveViewEdgeToEdge</key>
+	<false/>
 </dict>
 </plist>

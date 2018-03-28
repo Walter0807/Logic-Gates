@@ -16,7 +16,6 @@
 import PlaygroundSupport
 import Foundation
 allowGates = [true,true,true,false,false,false,false]
-//PlaygroundPage.current.needsIndefiniteExecution = true
 
 func updateView(_ message: String) {
     let page = PlaygroundPage.current
@@ -28,6 +27,7 @@ func updateView(_ message: String) {
 func Test(_ 🏀: Var, _ 📚: Var) -> Var{
     //#-end-hidden-code
     //#-code-completion(everything, hide)
+    //#-code-completion(keyword, show, let)
     //#-code-completion(description, show, "AND(input1: Var, input2: Var)", "OR(input1: Var, input2: Var)", "NOT(input: Var)")
     //#-code-completion(identifier, show, 🏀, 📚)
     //Now implement this expression to model the boy's happiness.

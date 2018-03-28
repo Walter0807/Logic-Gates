@@ -12,7 +12,7 @@ public class MoreGatesView: UIView{
         setNeedsDisplay()
     }
     
-    func drawMoreGates(frame: CGRect = CGRect(x: 0, y: 0, width: 542, height: 501)) {
+    func drawMoreGates(frame: CGRect = CGRect(x: 0, y: 0, width: 540, height: 500)) {
         
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
@@ -569,7 +569,7 @@ public class MoreGatesView: UIView{
         
         
         //// value Y Drawing
-        let valueYRect = CGRect(x: frame.minX + 222, y: frame.minY + 200, width: 41, height: 43)
+        let valueYRect = CGRect(x: frame.minX + 222, y: frame.minY + 205, width: 41, height: 43)
         let valueYTextContent = trueFalse[varState[5]]
         let valueYStyle = NSMutableParagraphStyle()
         valueYStyle.alignment = .center

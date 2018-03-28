@@ -9,8 +9,8 @@
 	<key>Pages</key>
 	<array>
 		<string>More Gates.playgroundpage</string>
-		<string>NOTgate.playgroundpage</string>
 		<string>ORgate.playgroundpage</string>
+		<string>XORgate.playgroundpage</string>
 	</array>
 </dict>
 </plist>

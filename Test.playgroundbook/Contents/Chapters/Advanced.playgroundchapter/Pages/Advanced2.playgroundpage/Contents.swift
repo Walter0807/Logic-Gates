@@ -20,7 +20,8 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     //#-code-completion(identifier, show, a, b, c)
     //#-code-completion(keyword, show, var)
     //#-code-completion(currentmodule, show)
-    //#-code-completion(identifier, hide, correctAnswer, success, myCircuit)
+    //#-code-completion(identifier, hide, correctAnswer, success)
+    //#-code-completion(description, hide, "myCircuit(a: Var, b: Var, c: Var)")
     //Use a, b, c as the input variables.
     //#-editable-code
     var na = NOT(a), nb = NOT(b), nc = NOT(c)
