@@ -31,11 +31,11 @@ func Test(_ 🏀: Var, _ 📚: Var) -> Var{
     //#-code-completion(description, show, "AND(input1: Var, input2: Var)", "OR(input1: Var, input2: Var)", "NOT(input: Var)")
     //#-code-completion(identifier, show, 🏀, 📚)
     //Now implement this expression to model the boy's happiness.
-    var 😁 = /*#-editable-code your expression here*/AND(🏀,NOT(📚))/*#-end-editable-code*/
-    /*:
-     Tap *"Run My Code"* to check the result.
-     On [next page](@next), you will solve a problem based on your own inspection.
-     */
+    let 😁 = /*#-editable-code your expression here*/AND(🏀,NOT(📚))/*#-end-editable-code*/
+/*:
+ Tap *"Run My Code"* to check the result.
+ On [next page](@next), you will solve a problem based on your own inspection.
+ */
     //#-hidden-code
     return 😁
 }
@@ -54,7 +54,7 @@ func checkcnt(_ fl: Int) {
     }
 }
 
-timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true) { _ in
+timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
     checkcnt(3)
     let ball = Var(cnt/2), book = Var(cnt%2), ans = Test(ball,book)
     updateString = ball.str() + book.str() + ans.str() + Var(ans == correctAnswer[cnt]).str()
@@ -64,8 +64,7 @@ timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true) { _ in
         timer.invalidate()
         CFRunLoopStop(CFRunLoopGetCurrent())
     }
-    cnt += 1;
-    
+    cnt += 1
 }
 
 CFRunLoopRun()

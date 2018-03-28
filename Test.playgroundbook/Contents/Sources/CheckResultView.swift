@@ -51,6 +51,11 @@ public class correctResultView: UIView {
     
 }
 
+public func explain(_ ch: Character) -> Bool {
+    if ch=="0" {return false}
+    return true
+}
+
 
 
 

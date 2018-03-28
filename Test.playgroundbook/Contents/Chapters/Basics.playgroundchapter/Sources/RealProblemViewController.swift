@@ -3,8 +3,7 @@ import UIKit
 public class RealProblemViewController: UIViewController{
     
     var truthTable: GridViewController!
-    public var statusPreview: UIView!
-    
+    var statusPreview: UIView!
     var basketball: trueFalseResultView!
     var homework: trueFalseResultView!
     var happy: trueFalseResultView!
@@ -14,7 +13,6 @@ public class RealProblemViewController: UIViewController{
         title = "A Real Problem"
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setStatusPreview()
-        view.addSubview(statusPreview)
     }
     
     func setLabel(_ object: String, _ position: CGRect)
@@ -23,7 +21,6 @@ public class RealProblemViewController: UIViewController{
         let label = UILabel(frame: labelRect)
         label.attributedText = centeredAttributedString(object, fontSize: 50)
         statusPreview.addSubview(label)
-        
     }
     
     func setStatusPreview() {
@@ -49,20 +46,15 @@ public class RealProblemViewController: UIViewController{
         correct.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         statusPreview.addSubview(correct)
         
+        view.addSubview(statusPreview)
         
-        
-    }
-    
-    func explain(_ ch: Character) -> Bool {
-        if ch=="0" {return false}
-        return true
     }
     
     public func updateVars(_ varsToDisp: String){
-        var basketballNewValue = self.explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:0)])
-        var homeworkNewValue = self.explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:1)])
-        var happyNewValue = self.explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:2)])
-        var correctNewValue = self.explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:3)])
+        var basketballNewValue = explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:0)])
+        var homeworkNewValue = explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:1)])
+        var happyNewValue = explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:2)])
+        var correctNewValue = explain(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:3)])
         
         if self.basketball.isTrue != basketballNewValue{
             UIView.transition(
@@ -101,10 +93,6 @@ public class RealProblemViewController: UIViewController{
                     self.correct.isCorrect = correctNewValue
             })
         }
-        
-        
-        
-        
     }
     
     
