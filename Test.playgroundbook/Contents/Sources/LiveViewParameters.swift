@@ -29,3 +29,13 @@ public func placeMiddleHalf(_ view: UIView, _ offsetY: Double, _ widthItem: Doub
                   width:widthItem,
                   height:heightItem)
 }
+
+public func centeredAttributedString(_ string: String, fontSize: CGFloat, color: UIColor = UIColor.black) -> NSAttributedString{
+    //    var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+    //    font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle,
+                                                           .foregroundColor: color,
+                                                           .font: UIFont.systemFont(ofSize: fontSize, weight: .bold)])
+}

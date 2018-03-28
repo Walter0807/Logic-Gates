@@ -57,7 +57,7 @@ When you are ready, move on to the [next page](@next)
 
 //#-hidden-code
 
-var updateString = 🖋.str() + 📄.str() + 🍨.str() + 🍦.str() + 👍.str() + 📝.str() + 😍.str() + 👎.str()
+let updateString = 🖋.str() + 📄.str() + 🍨.str() + 🍦.str() + 👍.str() + 📝.str() + 😍.str() + 👎.str()
 updateView(updateString)
 
 if 📝 == Var(true) && 😍 == Var(true) && 👎 == Var(false){

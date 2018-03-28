@@ -41,7 +41,7 @@ let z = XNOR(m,n)
  When you are ready, move on to the [next page](@next). Interesting stuff ahead.
  */
 //#-hidden-code
-var updateString = a.str() + b.str() + c.str() + d.str() + x.str() + y.str() + m.str() + n.str() + z.str()
+let updateString = a.str() + b.str() + c.str() + d.str() + x.str() + y.str() + m.str() + n.str() + z.str()
 updateView(updateString)
 
 if x == Var(true) && z == Var(false) {
