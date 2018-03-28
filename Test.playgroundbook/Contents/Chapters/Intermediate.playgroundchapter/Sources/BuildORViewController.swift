@@ -24,6 +24,7 @@ public class BuildORViewController: UIViewController{
     func setGatesPreview() {
         gatesPreview = BuildORView(frame: placeMiddleCard(view, 200, 400, 500))
 //        gatesPreview.varState = [1,0,0,1,1,0,1,1,1]
+        gatesPreview.inputState = [0,0,0,0]
         gatesPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(gatesPreview)
     }
@@ -34,13 +35,13 @@ public class BuildORViewController: UIViewController{
     }
     
     public func updateVars(_ varsToDisp: String){
-//        gatesPreview.varState = []
-//        for charVar in varsToDisp {
-//            if let temp = Int(String(charVar)) {
-//                gatesPreview.varState += [temp]
-//            }
-//        }
-//        gatesPreview.redraw()
+        gatesPreview.inputState = []
+        for charVar in varsToDisp {
+            if let temp = Int(String(charVar)) {
+                gatesPreview.inputState += [temp]
+            }
+        }
+        gatesPreview.redraw()
     }
     
     public override func didReceiveMemoryWarning() {

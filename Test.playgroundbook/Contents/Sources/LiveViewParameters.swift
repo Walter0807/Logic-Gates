@@ -6,6 +6,7 @@ public let trueColor = UIColor(red: 0.060, green: 0.185, blue: 0.771, alpha: 1.0
 public let falseColor = UIColor.red
 public let trueFalse = ["F","T"," "]
 public let colorTF = [UIColor.red, UIColor(red: 0.060, green: 0.185, blue: 0.771, alpha: 1.000), UIColor.white]
+public let inputName = [" ", "A", "B"]
 
 public extension UIView {
     public func widthHalf() -> CGFloat {

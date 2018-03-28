@@ -4,7 +4,8 @@ import Foundation
 import CoreGraphics
 
 public class BuildORView: UIView{
-    public var varState = [Int]()
+    //public var varState = [Int]()
+    public var inputState = [Int]()
     public override func draw(_ rect: CGRect){
         drawCircuit(frame: rect)
     }
@@ -177,129 +178,129 @@ public class BuildORView: UIView{
         rectangle11Path.fill()
         
         
-        //// caption a 2 Drawing
-        let captionA2Rect = CGRect(x: frame.minX + 23, y: frame.minY + 16, width: 38, height: 40)
-        let captionA2TextContent = "A"
-        let captionA2Style = NSMutableParagraphStyle()
-        captionA2Style.alignment = .center
-        let captionA2FontAttributes = [
+        //// caption input 1 Drawing
+        let captionInput1Rect = CGRect(x: frame.minX + 23, y: frame.minY + 16, width: 38, height: 40)
+        let captionInput1TextContent = inputName[inputState[0]]
+        let captionInput1Style = NSMutableParagraphStyle()
+        captionInput1Style.alignment = .center
+        let captionInput1FontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionA2Style,
+            .paragraphStyle: captionInput1Style,
             ] as [NSAttributedStringKey: Any]
         
-        let captionA2TextHeight: CGFloat = captionA2TextContent.boundingRect(with: CGSize(width: captionA2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionA2FontAttributes, context: nil).height
+        let captionInput1TextHeight: CGFloat = captionInput1TextContent.boundingRect(with: CGSize(width: captionInput1Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionInput1FontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionA2Rect)
-        captionA2TextContent.draw(in: CGRect(x: captionA2Rect.minX, y: captionA2Rect.minY + (captionA2Rect.height - captionA2TextHeight) / 2, width: captionA2Rect.width, height: captionA2TextHeight), withAttributes: captionA2FontAttributes)
+        context.clip(to: captionInput1Rect)
+        captionInput1TextContent.draw(in: CGRect(x: captionInput1Rect.minX, y: captionInput1Rect.minY + (captionInput1Rect.height - captionInput1TextHeight) / 2, width: captionInput1Rect.width, height: captionInput1TextHeight), withAttributes: captionInput1FontAttributes)
         context.restoreGState()
         
         
-        //// caption a Drawing
-        let captionARect = CGRect(x: frame.minX + 23, y: frame.minY + 89, width: 38, height: 40)
-        let captionATextContent = "A"
-        let captionAStyle = NSMutableParagraphStyle()
-        captionAStyle.alignment = .center
-        let captionAFontAttributes = [
+        //// caption input 2 Drawing
+        let captionInput2Rect = CGRect(x: frame.minX + 23, y: frame.minY + 89, width: 38, height: 40)
+        let captionInput2TextContent = inputName[inputState[1]]
+        let captionInput2Style = NSMutableParagraphStyle()
+        captionInput2Style.alignment = .center
+        let captionInput2FontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionAStyle,
+            .paragraphStyle: captionInput2Style,
             ] as [NSAttributedStringKey: Any]
         
-        let captionATextHeight: CGFloat = captionATextContent.boundingRect(with: CGSize(width: captionARect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionAFontAttributes, context: nil).height
+        let captionInput2TextHeight: CGFloat = captionInput2TextContent.boundingRect(with: CGSize(width: captionInput2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionInput2FontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionARect)
-        captionATextContent.draw(in: CGRect(x: captionARect.minX, y: captionARect.minY + (captionARect.height - captionATextHeight) / 2, width: captionARect.width, height: captionATextHeight), withAttributes: captionAFontAttributes)
+        context.clip(to: captionInput2Rect)
+        captionInput2TextContent.draw(in: CGRect(x: captionInput2Rect.minX, y: captionInput2Rect.minY + (captionInput2Rect.height - captionInput2TextHeight) / 2, width: captionInput2Rect.width, height: captionInput2TextHeight), withAttributes: captionInput2FontAttributes)
         context.restoreGState()
         
         
-        //// caption a 3 Drawing
-        let captionA3Rect = CGRect(x: frame.minX + 23, y: frame.minY + 167, width: 38, height: 40)
-        let captionA3TextContent = "B"
-        let captionA3Style = NSMutableParagraphStyle()
-        captionA3Style.alignment = .center
-        let captionA3FontAttributes = [
+        //// caption input 3 Drawing
+        let captionInput3Rect = CGRect(x: frame.minX + 23, y: frame.minY + 167, width: 38, height: 40)
+        let captionInput3TextContent = inputName[inputState[2]]
+        let captionInput3Style = NSMutableParagraphStyle()
+        captionInput3Style.alignment = .center
+        let captionInput3FontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionA3Style,
+            .paragraphStyle: captionInput3Style,
             ] as [NSAttributedStringKey: Any]
         
-        let captionA3TextHeight: CGFloat = captionA3TextContent.boundingRect(with: CGSize(width: captionA3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionA3FontAttributes, context: nil).height
+        let captionInput3TextHeight: CGFloat = captionInput3TextContent.boundingRect(with: CGSize(width: captionInput3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionInput3FontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionA3Rect)
-        captionA3TextContent.draw(in: CGRect(x: captionA3Rect.minX, y: captionA3Rect.minY + (captionA3Rect.height - captionA3TextHeight) / 2, width: captionA3Rect.width, height: captionA3TextHeight), withAttributes: captionA3FontAttributes)
+        context.clip(to: captionInput3Rect)
+        captionInput3TextContent.draw(in: CGRect(x: captionInput3Rect.minX, y: captionInput3Rect.minY + (captionInput3Rect.height - captionInput3TextHeight) / 2, width: captionInput3Rect.width, height: captionInput3TextHeight), withAttributes: captionInput3FontAttributes)
         context.restoreGState()
         
         
-        //// caption a 4 Drawing
-        let captionA4Rect = CGRect(x: frame.minX + 23, y: frame.minY + 240, width: 38, height: 40)
-        let captionA4TextContent = "B"
-        let captionA4Style = NSMutableParagraphStyle()
-        captionA4Style.alignment = .center
-        let captionA4FontAttributes = [
+        //// caption input 4 Drawing
+        let captionInput4Rect = CGRect(x: frame.minX + 23, y: frame.minY + 240, width: 38, height: 40)
+        let captionInput4TextContent = inputName[inputState[3]]
+        let captionInput4Style = NSMutableParagraphStyle()
+        captionInput4Style.alignment = .center
+        let captionInput4FontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionA4Style,
+            .paragraphStyle: captionInput4Style,
             ] as [NSAttributedStringKey: Any]
         
-        let captionA4TextHeight: CGFloat = captionA4TextContent.boundingRect(with: CGSize(width: captionA4Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionA4FontAttributes, context: nil).height
+        let captionInput4TextHeight: CGFloat = captionInput4TextContent.boundingRect(with: CGSize(width: captionInput4Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionInput4FontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionA4Rect)
-        captionA4TextContent.draw(in: CGRect(x: captionA4Rect.minX, y: captionA4Rect.minY + (captionA4Rect.height - captionA4TextHeight) / 2, width: captionA4Rect.width, height: captionA4TextHeight), withAttributes: captionA4FontAttributes)
+        context.clip(to: captionInput4Rect)
+        captionInput4TextContent.draw(in: CGRect(x: captionInput4Rect.minX, y: captionInput4Rect.minY + (captionInput4Rect.height - captionInput4TextHeight) / 2, width: captionInput4Rect.width, height: captionInput4TextHeight), withAttributes: captionInput4FontAttributes)
         context.restoreGState()
         
         
-        //// caption a 5 Drawing
-        let captionA5Rect = CGRect(x: frame.minX + 216, y: frame.minY + 70, width: 38, height: 40)
-        let captionA5TextContent = "X"
-        let captionA5Style = NSMutableParagraphStyle()
-        captionA5Style.alignment = .center
-        let captionA5FontAttributes = [
+        //// caption x Drawing
+        let captionXRect = CGRect(x: frame.minX + 216, y: frame.minY + 70, width: 38, height: 40)
+        let captionXTextContent = "X"
+        let captionXStyle = NSMutableParagraphStyle()
+        captionXStyle.alignment = .center
+        let captionXFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionA5Style,
+            .paragraphStyle: captionXStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let captionA5TextHeight: CGFloat = captionA5TextContent.boundingRect(with: CGSize(width: captionA5Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionA5FontAttributes, context: nil).height
+        let captionXTextHeight: CGFloat = captionXTextContent.boundingRect(with: CGSize(width: captionXRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionXFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionA5Rect)
-        captionA5TextContent.draw(in: CGRect(x: captionA5Rect.minX, y: captionA5Rect.minY + (captionA5Rect.height - captionA5TextHeight) / 2, width: captionA5Rect.width, height: captionA5TextHeight), withAttributes: captionA5FontAttributes)
+        context.clip(to: captionXRect)
+        captionXTextContent.draw(in: CGRect(x: captionXRect.minX, y: captionXRect.minY + (captionXRect.height - captionXTextHeight) / 2, width: captionXRect.width, height: captionXTextHeight), withAttributes: captionXFontAttributes)
         context.restoreGState()
         
         
-        //// caption a 6 Drawing
-        let captionA6Rect = CGRect(x: frame.minX + 216, y: frame.minY + 185, width: 38, height: 40)
-        let captionA6TextContent = "Y"
-        let captionA6Style = NSMutableParagraphStyle()
-        captionA6Style.alignment = .center
-        let captionA6FontAttributes = [
+        //// caption y Drawing
+        let captionYRect = CGRect(x: frame.minX + 216, y: frame.minY + 185, width: 38, height: 40)
+        let captionYTextContent = "Y"
+        let captionYStyle = NSMutableParagraphStyle()
+        captionYStyle.alignment = .center
+        let captionYFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionA6Style,
+            .paragraphStyle: captionYStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let captionA6TextHeight: CGFloat = captionA6TextContent.boundingRect(with: CGSize(width: captionA6Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionA6FontAttributes, context: nil).height
+        let captionYTextHeight: CGFloat = captionYTextContent.boundingRect(with: CGSize(width: captionYRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionYFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionA6Rect)
-        captionA6TextContent.draw(in: CGRect(x: captionA6Rect.minX, y: captionA6Rect.minY + (captionA6Rect.height - captionA6TextHeight) / 2, width: captionA6Rect.width, height: captionA6TextHeight), withAttributes: captionA6FontAttributes)
+        context.clip(to: captionYRect)
+        captionYTextContent.draw(in: CGRect(x: captionYRect.minX, y: captionYRect.minY + (captionYRect.height - captionYTextHeight) / 2, width: captionYRect.width, height: captionYTextHeight), withAttributes: captionYFontAttributes)
         context.restoreGState()
         
         
-        //// caption a 7 Drawing
-        let captionA7Rect = CGRect(x: frame.minX + 362, y: frame.minY + 127, width: 38, height: 40)
-        let captionA7TextContent = "Z"
-        let captionA7Style = NSMutableParagraphStyle()
-        captionA7Style.alignment = .center
-        let captionA7FontAttributes = [
+        //// caption z Drawing
+        let captionZRect = CGRect(x: frame.minX + 362, y: frame.minY + 127, width: 38, height: 40)
+        let captionZTextContent = "Z"
+        let captionZStyle = NSMutableParagraphStyle()
+        captionZStyle.alignment = .center
+        let captionZFontAttributes = [
             .font: UIFont.italicSystemFont(ofSize: 30),
             .foregroundColor: textForeground,
-            .paragraphStyle: captionA7Style,
+            .paragraphStyle: captionZStyle,
             ] as [NSAttributedStringKey: Any]
         
-        let captionA7TextHeight: CGFloat = captionA7TextContent.boundingRect(with: CGSize(width: captionA7Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionA7FontAttributes, context: nil).height
+        let captionZTextHeight: CGFloat = captionZTextContent.boundingRect(with: CGSize(width: captionZRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: captionZFontAttributes, context: nil).height
         context.saveGState()
-        context.clip(to: captionA7Rect)
-        captionA7TextContent.draw(in: CGRect(x: captionA7Rect.minX, y: captionA7Rect.minY + (captionA7Rect.height - captionA7TextHeight) / 2, width: captionA7Rect.width, height: captionA7TextHeight), withAttributes: captionA7FontAttributes)
+        context.clip(to: captionZRect)
+        captionZTextContent.draw(in: CGRect(x: captionZRect.minX, y: captionZRect.minY + (captionZRect.height - captionZTextHeight) / 2, width: captionZRect.width, height: captionZTextHeight), withAttributes: captionZFontAttributes)
         context.restoreGState()
     }
 
