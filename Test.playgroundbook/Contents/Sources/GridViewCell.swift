@@ -3,7 +3,7 @@ import UIKit
 class GridViewCell: UICollectionViewCell {
 
     var label:UILabel!
-    var paddingLeft:CGFloat = 5
+    var paddingLeft:CGFloat = 3
     
     override init(frame: CGRect) {
         super.init(frame: frame)

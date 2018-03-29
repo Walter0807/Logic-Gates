@@ -148,7 +148,7 @@ class GridViewLayout: UICollectionViewLayout {
             NSAttributedStringKey.font:UIFont.systemFont(ofSize: 15),
             NSAttributedStringKey.underlineStyle:NSUnderlineStyle.styleSingle.rawValue
             ])
-        let width = max(remainingWidth/CGFloat(columnIndex+1), 90)
+        let width = max(remainingWidth/CGFloat(columnIndex+1), 55)
         return CGSize(width: ceil(width), height:size.height + 10)
     }
 }
