@@ -19,8 +19,8 @@ public class BuildXORView: UIView{
         flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 101, width: 26, height: 29))]
         flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 153, width: 26, height: 29))]
         flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 239, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 225, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 311, width: 26, height: 29))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 220, width: 26, height: 29))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 315, width: 26, height: 29))]
         flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 190, y: frame.minY + 72, width: 26, height: 29))]
         flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 190, y: frame.minY + 184, width: 26, height: 29))]
         flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 311, y: frame.minY + 140, width: 26, height: 29))]
@@ -512,7 +512,7 @@ public class BuildXORView: UIView{
             
             
             //// caption input 4 Drawing
-            let captionInput4Rect = CGRect(x: frame.minX + 134, y: frame.minY + 225, width: 26, height: 29)
+            let captionInput4Rect = CGRect(x: frame.minX + 134, y: frame.minY + 220, width: 26, height: 29)
             let captionInput4TextContent = inputName[inputState[4]]
             let captionInput4Style = NSMutableParagraphStyle()
             captionInput4Style.alignment = .center
@@ -530,7 +530,7 @@ public class BuildXORView: UIView{
             
             
             //// caption input 5 Drawing
-            let captionInput5Rect = CGRect(x: frame.minX + 134, y: frame.minY + 311, width: 26, height: 29)
+            let captionInput5Rect = CGRect(x: frame.minX + 134, y: frame.minY + 315, width: 26, height: 29)
             let captionInput5TextContent = inputName[inputState[5]]
             let captionInput5Style = NSMutableParagraphStyle()
             captionInput5Style.alignment = .center

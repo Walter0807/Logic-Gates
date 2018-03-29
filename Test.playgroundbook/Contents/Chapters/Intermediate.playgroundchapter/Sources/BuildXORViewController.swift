@@ -82,7 +82,7 @@ public class BuildXORViewController: UIViewController{
                     duration: 0.5,
                     options: [.transitionCurlDown],
                     animations: {
-                        self.correct.isCorrect = varValue[5]
+                        self.correct.isCorrect = varValue[7]
                 })
             }
         }
