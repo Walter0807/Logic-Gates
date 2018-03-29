@@ -116,7 +116,10 @@ public class GridViewController: UICollectionViewController {
             if indexPath.row == 6 {cell.backgroundColor = #colorLiteral(red: 0.6235294118, green: 0.3647058824, blue: 0.9647058824, alpha: 1)}
             if indexPath.row == 7 {cell.backgroundColor = #colorLiteral(red: 1, green: 0.4156862745, blue: 0.8823529412, alpha: 1)}
             if indexPath.section == 1 {cell.backgroundColor = cell.backgroundColor!.withAlphaComponent(0.3)}
-            if indexPath.section == 2 {cell.backgroundColor = UIColor.white}
+            if indexPath.section == 2 {
+                if cell.label.text == "0" {cell.backgroundColor = UIColor.white}
+                else {cell.backgroundColor!.withAlphaComponent(0.1)}
+            }
             if indexPath.row == 0 {
                 cell.backgroundColor = UIColor(white: 242/255.0, alpha: 1)
                 cell.label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)

@@ -9,11 +9,6 @@ public class AdvancedPage1ViewController: UIViewController{
     
     public override func viewDidLoad() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        setFree = true
-        budget = 6
-        cost = 12
-        gatePrice = [2,2,1,1,1,4,3]
-        setFree = false
         setPriceTable()
         setTruthTable()
         moneyPreview = moneyView(frame: placeMiddleHalf(view, 170, 400, 80))
@@ -25,22 +20,17 @@ public class AdvancedPage1ViewController: UIViewController{
         priceTable.pageNumber = 6
         priceTable.setColumns(columns: ["Gates", "AND","OR", "NOT", "NAND", "NOR", "XOR", "XNOR"])
         priceTable.addRow(row: getPriceRow())
-        priceTable.addRow(row: ["Quantity", "0", "0", "0", "0", "0", "0", "0"])
+        priceTable.addRow(row: getQuantityRow())
         view.addSubview(priceTable.view)
     }
     
     func setTruthTable() {
         truthTable = GridViewController()
         truthTable.pageNumber = 0
-        truthTable.setColumns(columns: ["a", "b", "c", "ans", "result"])
-        truthTable.addRow(row: ["0", "0", "0", "1", " "])
-        truthTable.addRow(row: ["0", "0", "1", "1", " "])
-        truthTable.addRow(row: ["0", "1", "0", "0", " "])
-        truthTable.addRow(row: ["0", "1", "1", "1", " "])
-        truthTable.addRow(row: ["1", "0", "0", "0", " "])
-        truthTable.addRow(row: ["1", "0", "1", "1", " "])
-        truthTable.addRow(row: ["1", "1", "0", "1", " "])
-        truthTable.addRow(row: ["1", "1", "1", "1", " "])
+        truthTable.setColumns(columns: truthTableData[0])
+        for i in 1..<truthTableData.count {
+             truthTable.addRow(row: truthTableData[i])
+        }
         view.addSubview(truthTable.view)
     }
     
@@ -60,6 +50,8 @@ public class AdvancedPage1ViewController: UIViewController{
     }
     
 }
+
+public var truthTableData: [[String]]!
 
 
 

@@ -18,6 +18,7 @@ Below is a clumsy attempt. It functions well but is way too expensive. **Try to 
 //#-hidden-code
 import PlaygroundSupport
 allowGates = [true,true,true,true,true,true,true]
+gatesCount = [0,0,0,0,0,0,0,0]
 //AND OR NOT NAND NOR XOR XNOR
 setFree = false
 //#-end-hidden-code
