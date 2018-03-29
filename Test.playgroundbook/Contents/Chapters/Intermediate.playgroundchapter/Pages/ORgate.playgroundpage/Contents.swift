@@ -35,8 +35,8 @@ func myORGate(_ a: VarID, _ b: VarID) -> VarID{
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, a, b)
 //#-code-completion(keyword, show, let)
-    let x = NAND(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/, /*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
-    let y = NAND(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/, /*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
+    let x = NAND(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
+    let y = NAND(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
     let z = NAND(x,y)
 //#-hidden-code
     gateI = x
@@ -84,7 +84,7 @@ if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NAND gate](glossary://NAND%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same."], solution: "let x = NAND(a,a), y = NAND(b,b")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NAND gate](glossary://NAND%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same."], solution: "`let x = NAND(a,a)\nlet y = NAND(b,b)`")
 }
 
 //#-end-hidden-code

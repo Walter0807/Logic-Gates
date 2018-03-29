@@ -1,8 +1,8 @@
 import PlaygroundSupport
 let page = PlaygroundPage.current
-page.liveView = BuildORViewController()
+page.liveView = BuildXORViewController()
 
-extension BuildORViewController: PlaygroundLiveViewMessageHandler {
+extension BuildXORViewController: PlaygroundLiveViewMessageHandler {
     public func receive(_ message: PlaygroundValue) {
         if case let .string(varsToDisp) = message{
             updateVars(varsToDisp)

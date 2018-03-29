@@ -72,7 +72,7 @@ if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Keep [going](@next)!")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Try to connect two gates."], solution: "var 😁 = AND(🏀,NOT(📚))")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Try to connect two gates."], solution: "`var 😁 = AND(🏀,NOT(📚))`")
 }
 //#-end-hidden-code
 

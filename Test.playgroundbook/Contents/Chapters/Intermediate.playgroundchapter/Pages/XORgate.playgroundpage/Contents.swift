@@ -1,46 +1,104 @@
 /*:
  - Note:
-You may have noticed that some gates are "replaceable", which means their functions can be **fully** replaced by some other gates.
+ You may have noticed that some gates are "replaceable", which means their functions can be **fully** replaced by some other gates.
  \
  \
-As a matter of fact, *Charles Sanders Peirce* (during 1880–81) showed that [NOR gates](glossary://NOR%20gate) alone (or alternatively [NAND gates](glossary://NAND%20gate) alone) can be used to reproduce the functions of all the other logic gates. The first published proof was by *Henry M. Sheffer* in 1913, so the NAND logical operation is sometimes called Sheffer stroke; the logical NOR is sometimes called Peirce's arrow. Consequently, these gates are sometimes called [universal logic gates](glossary://universal%20logic%20gate).
+ As a matter of fact, *Charles Sanders Peirce* (during 1880–81) showed that [NOR gates](glossary://NOR%20gate) alone (or alternatively [NAND gates](glossary://NAND%20gate) alone) can be used to reproduce the functions of all the other logic gates. The first published proof was by *Henry M. Sheffer* in 1913, so the NAND logical operation is sometimes called Sheffer stroke; the logical NOR is sometimes called Peirce's arrow. Consequently, these gates are sometimes called [universal logic gates](glossary://universal%20logic%20gate).
  \
  \
-On the next two pages, you'll try to prove this theorem partly.
+ On the next two pages, you'll try to prove this theorem partly.
  
-In this page, you will build your own [NOT gate](glossary://NOT%20gate) using [NOR gate(s)](glossary://NOR%20gate) **only**.\
-You are encouraged to use as few [NOR gate(s)](glossary://NOR%20gate) as possible.\
-Related [truth tables](glossary://truth%20table) are posted on the right as references.
-*/
+ 
+ Now, let's create a [OR gate](glossary://OR%20gate) using [NAND gates](glossary://NAND%20gate) **only**.\
+ As is shown on the right, the circuit is already built. Your task is to decide the inputs in order to make the circuit function just as a [OR gate](glossary://OR%20gate).\
+ Related [truth tables](glossary://truth%20table) are posted as references.
+ */
 //#-hidden-code
 import PlaygroundSupport
+import Foundation
 allowGates = [false,false,false,false,true,false,false]
 //AND OR NOT NAND NOR XOR XNOR
-//#-end-hidden-code
-func myNOTGate(_ a: Var) -> Var{
-    //#-code-completion(everything, hide)
-    //#-code-completion(description, show, "NOR(input1: Var, input2: Var)")
-    //#-code-completion(identifier, show, a)
-    //#-code-completion(keyword, show, let)
-    //Use a as the input variable.
-    var result = /*#-editable-code your expression here*/NOR(a,a)/*#-end-editable-code*/
-    return result
+
+func updateView(_ message: String) {
+    let page = PlaygroundPage.current
+    if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
+        proxy.send(.string(message))
+    }
 }
+
+var gateX: VarID!
+var gateY: VarID!
+var gateC: VarID!
+var gateD: VarID!
+
+func myXORGate(_ a: VarID, _ b: VarID) -> VarID{
+    //#-end-hidden-code
+    //#-code-completion(everything, hide)
+    //#-code-completion(identifier, show, a, b)
+    //#-code-completion(keyword, show, let)
+    let c = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
+    let d = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
+    let x = NOR(c,d)
+    let y = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
+    let z = NOR(x,y)
+    //#-hidden-code
+    gateX = x
+    gateY = y
+    gateC = c
+    gateD = d
+    return z
+}
+
 /*:
  Tap *"Run My Code"* to check the result.
- On [next page](@next), you will implement an AND gate on your own.
+ [Next chapter](@next) will provide you with more fun stuff.
  */
-    //#-hidden-code
 
-if myNOTGate(Var(true))==Var(false) && myNOTGate(Var(false))==Var(true)
-{
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Now you know how to use a NOR gate as a NOT gate. How about [this one](@next)?")
-}
-else {
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Two inputs of the NOR gate may be the same."], solution: "var result = NOR(a,a)")
+//Drawing
+let tmp = myXORGate(VarID(0, 1), VarID(0, 2))
+var updateString = String(gateC.id) + String(gateD.id) + String(gateY.id)
+updateView(updateString)
+
+var success = true
+let correctAnswer = [VarID(false, 1), VarID(true, 1), VarID(true, 1), VarID(false, 1)]
+var cnt = 0
+var timer: Timer!
+
+func checkcnt(_ fl: Int) {
+    if cnt==fl {
+        timer.invalidate()
+        CFRunLoopStop(CFRunLoopGetCurrent())
+    }
 }
 
+timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
+    checkcnt(3)
+    let a = VarID(cnt/2, 1), b = VarID(cnt%2, 1), ans = myXORGate(a,b)
+    updateString = a.str() + b.str() + gateC.str() + gateD.str() + gateX.str() + gateY.str() + ans.str() + Var(ans == correctAnswer[cnt]).str()
+    updateView(updateString)
+    if ans != correctAnswer[cnt] {
+        success = false
+        timer.invalidate()
+        CFRunLoopStop(CFRunLoopGetCurrent())
+    }
+    cnt += 1
+}
+
+CFRunLoopRun()
+if success {
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
+}
+else{
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NAND gate](glossary://NAND%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same."], solution: " ")
+}
 
 //#-end-hidden-code
+
+
+
+
+
+
+
 
 

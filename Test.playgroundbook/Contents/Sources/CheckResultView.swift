@@ -8,7 +8,7 @@ public class trueFalseResultView: UIView {
     public var fontsize = 50
     public override func draw(_ rect: CGRect) {
         let label = UILabel(frame: rect)
-        label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         var char = String()
         var fontColor:  UIColor!
         if let isTrueValue = isTrue{
@@ -32,7 +32,7 @@ public class correctResultView: UIView {
     public var isCorrect: Bool? { didSet { setNeedsDisplay(); setNeedsLayout() } }
     public override func draw(_ rect: CGRect) {
         let label = UILabel(frame: rect)
-        label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         var char = String()
         var fontColor:  UIColor!
         if let isAnsCorrect = isCorrect{

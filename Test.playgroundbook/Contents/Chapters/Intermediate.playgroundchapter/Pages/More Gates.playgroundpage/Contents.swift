@@ -34,7 +34,7 @@ let a = Var(true), b = Var(/*#-editable-code*/<#T##boolean value##Bool#>/*#-end-
 let x = NAND(a,b)
 let c = Var(false), d = Var(/*#-editable-code*/<#T##boolean value##Bool#>/*#-end-editable-code*/)
 let y = NOR(c,d)
-let m = XOR(x,y), n = Var(true)
+let m = XOR(x, y), n = Var(true)
 let z = XNOR(m,n)
 /*:
  Tap *"Run My Code"* to check the results.

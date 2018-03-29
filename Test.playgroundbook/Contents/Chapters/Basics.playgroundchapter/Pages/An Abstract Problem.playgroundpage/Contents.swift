@@ -73,7 +73,7 @@ if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "More gates are [arriving](@next)...")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Use introduced variables as helper"], solution: "var z = AND(c, NOT(d))")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Use introduced variables as helper"], solution: "`let z = AND(c, NOT(d))`")
 }
 //#-end-hidden-code
 
