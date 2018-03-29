@@ -4,6 +4,8 @@ public class BuildORViewController: UIViewController{
     
     var truthTable: GridViewController!
     public var gatesPreview: BuildORView!
+    var correct: correctResultView!
+    
     public override func viewDidLoad() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setTruthTable()
@@ -20,12 +22,14 @@ public class BuildORViewController: UIViewController{
         truthTable.addRow(row: ["1", "1", "0", "1"])
         view.addSubview(truthTable.view)
     }
-    
     func setGatesPreview() {
-        gatesPreview = BuildORView(frame: placeMiddleCard(view, 200, 400, 500))
-//        gatesPreview.varState = [1,0,0,1,1,0,1,1,1]
+        gatesPreview = BuildORView(frame: placeMiddleCard(view, 200, 460, 500))
         gatesPreview.inputState = [0,0,0,0]
         gatesPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        gatesPreview.drawValues()
+        correct = correctResultView(frame: CGRect(x: 180, y: 300, width: 100, height: 100))
+        correct.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        gatesPreview.addSubview(correct)
         view.addSubview(gatesPreview)
     }
     
@@ -35,13 +39,53 @@ public class BuildORViewController: UIViewController{
     }
     
     public func updateVars(_ varsToDisp: String){
-        gatesPreview.inputState = []
-        for charVar in varsToDisp {
-            if let temp = Int(String(charVar)) {
-                gatesPreview.inputState += [temp]
+        if strlen(varsToDisp)<=4 {
+            gatesPreview.inputState = []
+            for charVar in varsToDisp {
+                if let temp = Int(String(charVar)) {
+                    gatesPreview.inputState += [temp]
+                }
+            }
+            gatesPreview.redraw()
+        }
+        else {
+            var varValue = [Bool]()
+            for ch in varsToDisp{
+                varValue += [explain(ch)]
+            }
+            for i in 0...3{
+                if gatesPreview.flipResults[i].isTrue != varValue[gatesPreview.inputState[i] - 1]{
+                    UIView.transition(
+                        with: gatesPreview.flipResults[i],
+                        duration: 0.5,
+                        options: [.transitionFlipFromLeft],
+                        animations: {
+                            self.gatesPreview.flipResults[i].isTrue = varValue[self.gatesPreview.inputState[i] - 1]
+                    })
+                }
+            }
+            for i in 4...6{
+                //gatesPreview.backgroundColor = UIColor.red
+                if gatesPreview.flipResults[i].isTrue != varValue[i - 2]{
+                    UIView.transition(
+                        with: gatesPreview.flipResults[i],
+                        duration: 0.5,
+                        options: [.transitionFlipFromLeft],
+                        animations: {
+                            self.gatesPreview.flipResults[i].isTrue = varValue[i - 2]
+                    })
+                }
+            }
+            if correct.isCorrect != varValue[5]{
+                UIView.transition(
+                    with: correct,
+                    duration: 0.5,
+                    options: [.transitionCurlDown],
+                    animations: {
+                        self.correct.isCorrect = varValue[5]
+                })
             }
         }
-        gatesPreview.redraw()
     }
     
     public override func didReceiveMemoryWarning() {

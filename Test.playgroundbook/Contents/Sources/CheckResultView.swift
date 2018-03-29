@@ -5,6 +5,7 @@ import CoreGraphics
 
 public class trueFalseResultView: UIView {
     public var isTrue: Bool? { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    public var fontsize = 50
     public override func draw(_ rect: CGRect) {
         let label = UILabel(frame: rect)
         label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -21,7 +22,7 @@ public class trueFalseResultView: UIView {
             }
         }
         else{return}
-        label.attributedText = centeredAttributedString(char, fontSize: 50, color: fontColor)
+        label.attributedText = centeredAttributedString(char, fontSize: CGFloat(fontsize), color: fontColor)
         self.addSubview(label)
     }
     

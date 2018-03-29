@@ -6,6 +6,8 @@ import CoreGraphics
 public class BuildORView: UIView{
     //public var varState = [Int]()
     public var inputState = [Int]()
+    public var flipResults = [trueFalseResultView]()
+    
     public override func draw(_ rect: CGRect){
         drawCircuit(frame: rect)
     }
@@ -13,7 +15,23 @@ public class BuildORView: UIView{
         setNeedsDisplay()
     }
     
-    func drawCircuit(frame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 350)) {
+    public func drawValues(frame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 350)) {
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 61, y: frame.minY + 16, width: 38, height: 40))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 61, y: frame.minY + 89, width: 38, height: 40))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 61, y: frame.minY + 167, width: 38, height: 40))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 61, y: frame.minY + 240, width: 38, height: 40))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 254, y: frame.minY + 70, width: 38, height: 40))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 254, y: frame.minY + 185, width: 38, height: 40))]
+        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 400, y: frame.minY + 127, width: 38, height: 40))]
+        for fR in flipResults {
+            fR.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//            fR.layer.borderWidth = 1
+            fR.fontsize = 30
+            self.addSubview(fR)
+        }
+    }
+    
+    func drawCircuit(frame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 350)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
