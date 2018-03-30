@@ -3,7 +3,7 @@ import UIKit
 import Foundation
 import CoreGraphics
 
-public class trueFalseResultView: UIView {
+public class TrueFalseResultView: UIView {
     public var isTrue: Bool? { didSet { setNeedsDisplay(); setNeedsLayout() } }
     public var fontsize = 50
     public override func draw(_ rect: CGRect) {
@@ -28,7 +28,7 @@ public class trueFalseResultView: UIView {
     
 }
 
-public class correctResultView: UIView {
+public class CorrectResultView: UIView {
     public var isCorrect: Bool? { didSet { setNeedsDisplay(); setNeedsLayout() } }
     public override func draw(_ rect: CGRect) {
         let label = UILabel(frame: rect)

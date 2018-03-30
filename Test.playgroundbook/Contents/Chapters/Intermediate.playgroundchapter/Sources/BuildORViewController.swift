@@ -4,7 +4,7 @@ public class BuildORViewController: UIViewController{
     
     var truthTable: GridViewController!
     public var gatesPreview: BuildORView!
-    var correct: correctResultView!
+    var correct: CorrectResultView!
     
     public override func viewDidLoad() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -27,7 +27,7 @@ public class BuildORViewController: UIViewController{
         gatesPreview.inputState = [0,0,0,0]
         gatesPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         gatesPreview.drawValues()
-        correct = correctResultView(frame: CGRect(x: 180, y: 300, width: 100, height: 100))
+        correct = CorrectResultView(frame: CGRect(x: 180, y: 300, width: 100, height: 100))
         correct.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         gatesPreview.addSubview(correct)
         view.addSubview(gatesPreview)

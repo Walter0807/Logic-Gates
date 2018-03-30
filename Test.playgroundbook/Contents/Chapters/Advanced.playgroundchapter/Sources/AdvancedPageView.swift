@@ -1,8 +1,8 @@
 import UIKit
 
-public class moneyView: UIView {
+public class MoneyView: UIView {
     public var budget = Int() { didSet { setNeedsDisplay(); setNeedsLayout() } }
-    public var costView = costLabel()
+    public var costView = CostLabel()
     public override func draw(_ rect: CGRect){
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setMoneyLabels(frame: rect)
@@ -20,7 +20,7 @@ public class moneyView: UIView {
         setLabel("Budget: ", CGRect(x: frame.minX, y: frame.minY, width: 120, height: 80))
         setLabel(String(budget), CGRect(x: frame.minX + 120, y: frame.minY, width: 80, height: 80))
         setLabel("Cost: ", CGRect(x: frame.minX + 200, y: frame.minY, width: 120, height: 80))
-        costView = costLabel(frame: CGRect(x: frame.minX + 320, y: frame.minY, width: 80, height: 80))
+        costView = CostLabel(frame: CGRect(x: frame.minX + 320, y: frame.minY, width: 80, height: 80))
         costView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(costView)
     }
@@ -34,12 +34,12 @@ public class moneyView: UIView {
             animations: {
                 self.costView.cost = realCost
                 if realCost>self.budget {self.costView.costColor = UIColor.red}
-                else if realCost != 0 {self.costView.costColor = #colorLiteral(red: 0, green: 0.9001427665, blue: 0.08795668509, alpha: 1)}
+                else if realCost != 0 {self.costView.costColor = #colorLiteral(red: 0.003166413687, green: 0.8219979378, blue: 0.08768630331, alpha: 1)}
         })
     }
 }
 
-public class costLabel: UIView {
+public class CostLabel: UIView {
     public var cost: Int? { didSet { setNeedsDisplay(); setNeedsLayout() } }
     public var costColor = UIColor.black { didSet { setNeedsDisplay(); setNeedsLayout() } }
     public override func draw(_ rect: CGRect) {
@@ -55,6 +55,24 @@ public class costLabel: UIView {
     }
 }
 
+public class SentenceView: UIView {
+    public var content = String() { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    public override func draw(_ rect: CGRect) {
+        let label = UILabel(frame: rect)
+        label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        var textStyle = NSMutableParagraphStyle()
+        textStyle.alignment = .center
+        let textFontAttributes = [
+            .font: UIFont(name: "Arial-ItalicMT", size: 22)!,
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: textStyle,
+            ] as [NSAttributedStringKey: Any]
+        label.attributedText = NSAttributedString(string: content, attributes: textFontAttributes)
+        self.addSubview(label)
+    }
+}
+
+
 public func getPriceRow() -> [String] {
     var prices = ["Price"]
     for pr in gatePrice {
@@ -62,6 +80,8 @@ public func getPriceRow() -> [String] {
     }
     return prices
 }
+
+public let contentString = [" ", "Ooops! Your circuit doesn’t work as expected.", "It seems that your circuit costs too much..."]
 
 
 

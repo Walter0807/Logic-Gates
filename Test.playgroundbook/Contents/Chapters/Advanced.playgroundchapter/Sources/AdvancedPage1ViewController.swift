@@ -18,13 +18,14 @@ public class AdvancedPage1ViewController: UIViewController{
     
     var priceTable: GridViewController!
     var truthTable: GridViewController!
-    var TruthTable: GridViewController!
-    var moneyPreview: moneyView!
+    var sentencePreview: SentenceView!
+    var MoneyPreview: MoneyView!
     public override func viewDidLoad() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setPriceTable()
         setTruthTable()
         setMoneyView(budget,0)
+        setSentenceView()
     }
     
     func setPriceTable() {
@@ -47,10 +48,17 @@ public class AdvancedPage1ViewController: UIViewController{
     }
     
     func setMoneyView(_ budget: Int, _ cost: Int) {
-        moneyPreview = moneyView(frame: placeMiddleHalf(view, 170, 400, 80))
-        moneyPreview.budget = budget
-        moneyPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        view.addSubview(moneyPreview)
+        MoneyPreview = MoneyView(frame: placeMiddleHalf(view, 170, 400, 80))
+        MoneyPreview.budget = budget
+        MoneyPreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.addSubview(MoneyPreview)
+    }
+    
+    func setSentenceView() {
+        sentencePreview = SentenceView(frame: placeMiddleHalf(view, 580, 480, 80))
+        sentencePreview.content = " "
+        sentencePreview.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.addSubview(sentencePreview)
     }
     
     public override func viewDidLayoutSubviews() {
@@ -77,10 +85,29 @@ public class AdvancedPage1ViewController: UIViewController{
             priceTable.view.removeFromSuperview()
             setPriceTable()
         }
+        else if varsToDisp[varsToDisp.startIndex] == "*" {
+            if let idx = Int(String(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:1)])) {
+                UIView.transition(
+                    with: self.sentencePreview,
+                    duration: 0.5,
+                    options: [.transitionCurlDown],
+                    animations: {
+                        self.sentencePreview.content = contentString[idx]
+                        if idx>0 {
+                            self.sentencePreview.layer.borderWidth = 4
+                            self.sentencePreview.layer.borderColor = #colorLiteral(red: 0.9239723682, green: 0.07257270068, blue: 0.3809882402, alpha: 1)
+                            self.sentencePreview.layer.cornerRadius = 20
+                        }
+                        else{
+                            self.sentencePreview.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                        }
+                })
+            }
+        }
     }
     
     public func updateCost(_ realCost: Int){
-        moneyPreview.adjustCost(realCost)
+        MoneyPreview.adjustCost(realCost)
     }
     
     public override func didReceiveMemoryWarning() {

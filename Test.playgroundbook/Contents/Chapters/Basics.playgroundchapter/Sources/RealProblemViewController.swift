@@ -4,10 +4,10 @@ public class RealProblemViewController: UIViewController{
     
     var truthTable: GridViewController!
     var statusPreview: UIView!
-    var basketball: trueFalseResultView!
-    var homework: trueFalseResultView!
-    var happy: trueFalseResultView!
-    var correct: correctResultView!
+    var basketball: TrueFalseResultView!
+    var homework: TrueFalseResultView!
+    var happy: TrueFalseResultView!
+    var correct: CorrectResultView!
     
     public override func viewDidLoad() {
         title = "A Real Problem"
@@ -30,19 +30,19 @@ public class RealProblemViewController: UIViewController{
         setLabel("📚", CGRect(x: 130, y: 100, width: 100, height: 100))
         setLabel("😁", CGRect(x: 230, y: 100, width: 100, height: 100))
         
-        basketball = trueFalseResultView(frame: CGRect(x: 30, y: 200, width: 100, height: 100))
+        basketball = TrueFalseResultView(frame: CGRect(x: 30, y: 200, width: 100, height: 100))
         basketball.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         statusPreview.addSubview(basketball)
         
-        homework = trueFalseResultView(frame: CGRect(x: 130, y: 200, width: 100, height: 100))
+        homework = TrueFalseResultView(frame: CGRect(x: 130, y: 200, width: 100, height: 100))
         homework.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         statusPreview.addSubview(homework)
         
-        happy = trueFalseResultView(frame: CGRect(x: 230, y: 200, width: 100, height: 100))
+        happy = TrueFalseResultView(frame: CGRect(x: 230, y: 200, width: 100, height: 100))
         happy.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         statusPreview.addSubview(happy)
         
-        correct = correctResultView(frame: CGRect(x: 130, y: 300, width: 100, height: 100))
+        correct = CorrectResultView(frame: CGRect(x: 130, y: 300, width: 100, height: 100))
         correct.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         statusPreview.addSubview(correct)
         

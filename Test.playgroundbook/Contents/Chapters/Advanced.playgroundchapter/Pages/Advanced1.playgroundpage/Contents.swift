@@ -22,6 +22,7 @@ gatesCount = [0,0,0,0,0,0,0,0]
 let gatePrice = [2,2,1,1,1,4,3]
 var cost = 0
 let budget = 6
+var sentence = String()
 
 func updateView(_ message: String) {
     let page = PlaygroundPage.current
@@ -81,8 +82,6 @@ for i in 0..<8 {
     updateString += tmp.str()
     if tmp != correctAnswer[i] {
         success = false
-        PlaygroundPage.current.assessmentStatus = .fail(hints: ["Think about the two situations resulting false output."], solution: "var result = OR(c, XNOR(a, b)")
-        //break
     }
 }
 updateView(updateString)
@@ -94,12 +93,20 @@ for i in 0...6{
 updateView(updateString)
 updateCost(cost)
 
-if cost>budget{
+if !success {
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Think about the two situations resulting false output."], solution: "var result = OR(c, XNOR(a, b)")
+    sentence = "*1"
+}
+else if cost>budget{
     PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is **way too expensive**. Maybe you can find replacement to reduce the cost."], solution: "var result = OR(c, XNOR(a, b)")
-}
-else if success {
+    sentence = "*2"
+}else {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Nice job! Try [another one](@next).")
+    sentence = "*0"
 }
+updateView(sentence)
+
+
 
 //#-end-hidden-code
 
