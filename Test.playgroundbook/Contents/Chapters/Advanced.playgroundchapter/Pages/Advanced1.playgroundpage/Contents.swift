@@ -46,20 +46,19 @@ func updateCost(_ message: Int) {
 //#-code-completion(description, show, "OR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "XOR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "XNOR(input1: Var, input2: Var)")
-//#-code-completion(description, show, "NOT(input: Var)")
+//#-code-completion(description, show, "NOT(input: let)")
 //#-code-completion(identifier, show, a, b, c)
 //#-code-completion(keyword, show, var)
 //#-code-completion(currentmodule, show)
-//#-code-completion(identifier, hide, correctAnswer, success)
-//#-code-completion(description, hide, "myCircuit(a: Var, b: Var, c: Var)")
+//#-code-completion(identifier, hide, correctAnswer, success, result, budget, cost, gatePrice, updateString)
+//#-code-completion(description, hide, "myCircuit(a: Var, b: Var, c: Var)", "updateCost(message: Int), updateView(message: String)")
 func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
-    //Use a, b, c as the input variables.
     //#-editable-code
-    var na = NOT(a), nb = NOT(b), nc = NOT(c)
-    var caseOne = AND(AND(na, b), nc)
-    var caseTwo = AND(AND(a, nb), nc)
-    var result = NOR(caseOne, caseTwo)
+    let na = NOT(a), nb = NOT(b), nc = NOT(c)
+    let caseOne = AND(AND(na, b), nc)
+    let caseTwo = AND(AND(a, nb), nc)
     //#-end-editable-code
+    let result = /*#-editable-code*/NOR(caseOne, caseTwo)/*#-end-editable-code*/
     return result
 }
 
@@ -88,6 +87,7 @@ for i in 0..<8 {
 }
 updateView(updateString)
 updateString = gatesCount.reduce("%", {$0 + " " + String($1/8)})
+cost = 0
 for i in 0...6{
     cost += gatesCount[i]*gatePrice[i]/8
 }
@@ -95,7 +95,7 @@ updateView(updateString)
 updateCost(cost)
 
 if cost>budget{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is way too expensive. Maybe you can find replacement to reduce the cost."], solution: "var result = OR(c, XNOR(a, b)")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is **way too expensive**. Maybe you can find replacement to reduce the cost."], solution: "var result = OR(c, XNOR(a, b)")
 }
 else if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Nice job! Try [another one](@next).")

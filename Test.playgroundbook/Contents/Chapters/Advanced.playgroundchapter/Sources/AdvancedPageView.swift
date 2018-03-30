@@ -34,7 +34,7 @@ public class moneyView: UIView {
             animations: {
                 self.costView.cost = realCost
                 if realCost>self.budget {self.costView.costColor = UIColor.red}
-                else {self.costView.costColor = UIColor.black}
+                else if realCost != 0 {self.costView.costColor = #colorLiteral(red: 0, green: 0.9001427665, blue: 0.08795668509, alpha: 1)}
         })
     }
 }
@@ -50,21 +50,17 @@ public class costLabel: UIView {
         }
         else {
             label.attributedText = centeredAttributedString("0", fontSize: 28, color: costColor)
-            
         }
         self.addSubview(label)
     }
 }
 
-
-
-public func getQuantityRow() -> [String] {
-    var quantities = ["Quantity"]
-    
-    for qtt in gatesCount {
-        quantities += [String(qtt)]
+public func getPriceRow() -> [String] {
+    var prices = ["Price"]
+    for pr in gatePrice {
+        prices += [String(pr)]
     }
-    return quantities
+    return prices
 }
 
 

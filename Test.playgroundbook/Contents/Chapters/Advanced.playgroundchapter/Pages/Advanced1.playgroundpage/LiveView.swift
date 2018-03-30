@@ -1,12 +1,7 @@
 import PlaygroundSupport
 
-//setFree = true
-
-//setFree = false
-
 let page = PlaygroundPage.current
 page.liveView = AdvancedPage1ViewController()
-
 
 extension AdvancedPage1ViewController: PlaygroundLiveViewMessageHandler {
     public func receive(_ message: PlaygroundValue) {

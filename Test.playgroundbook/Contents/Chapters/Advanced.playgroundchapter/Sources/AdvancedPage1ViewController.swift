@@ -27,14 +27,6 @@ public class AdvancedPage1ViewController: UIViewController{
         setMoneyView(budget,0)
     }
     
-    public func getPriceRow() -> [String] {
-        var prices = ["Price"]
-        for pr in gatePrice {
-            prices += [String(pr)]
-        }
-        return prices
-    }
-    
     func setPriceTable() {
         priceTable = GridViewController()
         priceTable.pageNumber = 6
