@@ -19,8 +19,25 @@ Below is a clumsy attempt. It functions well but is way too expensive. **Try to 
 import PlaygroundSupport
 allowGates = [true,true,true,true,true,true,true]
 gatesCount = [0,0,0,0,0,0,0,0]
+let gatePrice = [2,2,1,1,1,4,3]
+var cost = 0
+let budget = 6
+
+func updateView(_ message: String) {
+    let page = PlaygroundPage.current
+    if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
+        proxy.send(.string(message))
+    }
+}
+
+func updateCost(_ message: Int) {
+    let page = PlaygroundPage.current
+    if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
+        proxy.send(.integer(message))
+    }
+}
+
 //AND OR NOT NAND NOR XOR XNOR
-setFree = false
 //#-end-hidden-code
 //#-code-completion(everything, hide)
 //#-code-completion(description, show, "NAND(input1: Var, input2: Var)")
@@ -57,16 +74,30 @@ Tap *"Run My Code"* to check the result.\
 
 
 let correctAnswer = [Var(true), Var(true), Var(false), Var(true), Var(false), Var(true), Var(true), Var(true)]
+var updateString = "!"
 
 var success = true
 for i in 0..<8 {
-    if myCircuit(Var(i/4), Var((i/2)%2), Var(i%2)) != correctAnswer[i] {
+    let tmp = myCircuit(Var(i/4), Var((i/2)%2), Var(i%2))
+    updateString += tmp.str()
+    if tmp != correctAnswer[i] {
         success = false
         PlaygroundPage.current.assessmentStatus = .fail(hints: ["Think about the two situations resulting false output."], solution: "var result = OR(c, XNOR(a, b)")
-        break
+        //break
     }
 }
-if success {
+updateView(updateString)
+updateString = gatesCount.reduce("%", {$0 + " " + String($1/8)})
+for i in 0...6{
+    cost += gatesCount[i]*gatePrice[i]/8
+}
+updateView(updateString)
+updateCost(cost)
+
+if cost>budget{
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is way too expensive. Maybe you can find replacement to reduce the cost."], solution: "var result = OR(c, XNOR(a, b)")
+}
+else if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Nice job! Try [another one](@next).")
 }
 

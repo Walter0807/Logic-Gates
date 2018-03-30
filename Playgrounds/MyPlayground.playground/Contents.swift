@@ -1,9 +1,4 @@
 import UIKit
 
-class tr {
-    var t: Int
-    var p: String
-}
-
-
-UIColor
+let a = "% 1 0 2 10 222 123 2"
+a.components(separatedBy: " ")
