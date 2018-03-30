@@ -11,6 +11,7 @@ public var truthTableData = [["a", "b", "c", "ans", "result"],
                              ["1", "0", "1", "1", " "],
                              ["1", "1", "0", "1", " "],
                              ["1", "1", "1", "1", " "]]
+public var truthTableDataOriginal = truthTableData
 public var priceTableData = ["Quantity", "0","0", "0", "0", "0", "0", "0"]
 public let budget = 6
 
@@ -70,6 +71,7 @@ public class AdvancedPage1ViewController: UIViewController{
     
     public func updateVars(_ varsToDisp: String){
         if varsToDisp[varsToDisp.startIndex] == "!" {
+            truthTableData = truthTableDataOriginal
             truthTableData[0][4] = "result"
             for i in 1...8 {
                 truthTableData[i][4] = String(varsToDisp[varsToDisp.index(varsToDisp.startIndex,offsetBy:i)])
@@ -103,6 +105,14 @@ public class AdvancedPage1ViewController: UIViewController{
                         }
                 })
             }
+        }
+        else if varsToDisp[varsToDisp.startIndex] == "~" {
+            let element = varsToDisp.components(separatedBy: " ")
+            for i in 0...8 {
+                truthTableData[i] += [element[i+1]]
+            }
+            truthTable.view.removeFromSuperview()
+            setTruthTable()
         }
     }
     
