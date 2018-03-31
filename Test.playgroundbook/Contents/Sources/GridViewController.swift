@@ -7,9 +7,6 @@ public class GridViewController: UICollectionViewController {
 
     var rows: [[Any]]! = []
     public var pageNumber: Int = 0
-    //private var selectedColIdx = -1
-
-    //private var asc = true
     
     public init() {
 
@@ -81,7 +78,7 @@ public class GridViewController: UICollectionViewController {
         
         if indexPath.section == 0 {
             cell.backgroundColor = #colorLiteral(red: 0.994199574, green: 0.9595844572, blue: 0.5758271617, alpha: 1)
-            if pageNumber == 0 {
+            if pageNumber == 7 {
                 if indexPath.row == 3 {cell.backgroundColor = #colorLiteral(red: 0.9239723682, green: 0.5767884859, blue: 0.567258418, alpha: 1)}
                 if indexPath.row == 4 {cell.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.8640284293, blue: 0.7343515728, alpha: 1)}
             }
@@ -110,7 +107,7 @@ public class GridViewController: UICollectionViewController {
             else {cell.backgroundColor = UIColor.white}
         }
         
-        if pageNumber >= 6 {
+        if pageNumber == 6 {
             
             if indexPath.row == 1 {cell.backgroundColor = #colorLiteral(red: 1, green: 0.5843137255, blue: 0.2078431373, alpha: 1)}
             if indexPath.row == 2 {cell.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8196078431, blue: 0.1725490196, alpha: 1)}

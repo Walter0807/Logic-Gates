@@ -40,7 +40,7 @@ public class AdvancedPage1ViewController: UIViewController{
     
     func setTruthTable() {
         truthTable = GridViewController()
-        truthTable.pageNumber = 0
+        truthTable.pageNumber = 7
         truthTable.setColumns(columns: truthTableData[0])
         for i in 1..<truthTableData.count {
              truthTable.addRow(row: truthTableData[i])

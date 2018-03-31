@@ -25,6 +25,7 @@ let budget = 6
 var sentence = String()
 var cols:Dictionary<String, [String]> = [:]
 var iter = 0
+var watchSequence = [String]()
 
 func updateView(_ message: String) {
     let page = PlaygroundPage.current
@@ -47,6 +48,7 @@ func watch(variable x: Var, title name: String) {
     }
     else {
         cols[name] = [name, x.str()]
+        watchSequence += [name]
     }
 }
 
@@ -70,14 +72,12 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     let na = NOT(a), nb = NOT(b), nc = NOT(c)
     let caseOne = AND(AND(na, b), nc)
     let caseTwo = AND(AND(a, nb), nc)
-    let xxx = iter
     watch(variable: caseTwo, title:"cT")
     //#-end-editable-code
     let result = /*#-editable-code*/NOR(caseOne, caseTwo)/*#-end-editable-code*/
     return result
 }
 
-//watch(variable: cc, title: "cc")
 
 /*:
  Tap *"Run My Code"* to check the result.\
@@ -88,7 +88,7 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
  */
 
 
-
+//#-hidden-code
 let correctAnswer = [Var(true), Var(true), Var(false), Var(true), Var(false), Var(true), Var(true), Var(true)]
 var updateString = "!"
 
@@ -103,8 +103,8 @@ for i in 0..<8 {
 }
 updateView(updateString)//Result
 
-for key in cols.keys {
-    updateString = cols[key]!.reduce("~", {$0 + " " + $1})
+for keys in watchSequence {
+    updateString = cols[keys]!.reduce("~", {$0 + " " + $1})
     updateView(updateString)//Cols
 }
 
@@ -129,6 +129,7 @@ else if cost>budget{
     sentence = "*0"
 }
 updateView(sentence)//Status Message
+//#-end-hidden-code
 
 
 

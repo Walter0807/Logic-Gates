@@ -3,14 +3,13 @@ import UIKit
 
 //多列表格组件布局类
 class GridViewLayout: UICollectionViewLayout {
-
+    
     private var itemAttributes: [[UICollectionViewLayoutAttributes]] = []
     private var itemsSize: [NSValue] = []
     private var contentSize: CGSize = CGSize.zero
-
+    
     var viewController: GridViewController!
     
-
     override func prepare() {
         if collectionView!.numberOfSections == 0 {
             return
@@ -39,7 +38,7 @@ class GridViewLayout: UICollectionViewLayout {
                 
                 let indexPath = IndexPath(item: index, section: section)
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-
+                
                 if index == 0{
                     attributes.frame = CGRect(x:xOffset, y:yOffset, width:itemSize.width,
                                               height:itemSize.height).integral
@@ -49,23 +48,29 @@ class GridViewLayout: UICollectionViewLayout {
                                               height:itemSize.height).integral
                 }
                 
-
-                if index <= 2 {
+                
+                if index <= 4 {
                     attributes.zIndex = 1024
                 }
                 
-
                 if section == 0 {
                     var frame = attributes.frame
                     frame.origin.y = self.collectionView!.contentOffset.y
                     attributes.frame = frame
                 }
+                
+                if (collectionView?.numberOfSections)! > 8
+                {
+                    if index == 0 {
+                        attributes.frame = CGRect(x:self.collectionView!.contentOffset.x + collectionView!.contentInset.left, y:yOffset, width:itemSize.width+1,
+                                                  height:itemSize.height).integral
+                    }
+                    else if index <= 4 {
+                    attributes.frame = CGRect(x:self.collectionView!.contentOffset.x + CGFloat(index) * itemSize.width - 1
+                        + collectionView!.contentInset.left, y:yOffset, width:itemSize.width+1,
+                                                             height:itemSize.height).integral
+                    }
 
-                if index == 0 {
-                    var frame = attributes.frame
-                    frame.origin.x = self.collectionView!.contentOffset.x
-                        + collectionView!.contentInset.left
-                    attributes.frame = frame
                 }
                 
                 sectionAttributes.append(attributes)
@@ -106,7 +111,7 @@ class GridViewLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath)
         -> UICollectionViewLayoutAttributes? {
-        return itemAttributes[indexPath.section][indexPath.row]
+            return itemAttributes[indexPath.section][indexPath.row]
     }
     
     override func layoutAttributesForElements(in rect: CGRect)
@@ -150,3 +155,5 @@ class GridViewLayout: UICollectionViewLayout {
         return CGSize(width: ceil(width), height:size.height + 10)
     }
 }
+
+
