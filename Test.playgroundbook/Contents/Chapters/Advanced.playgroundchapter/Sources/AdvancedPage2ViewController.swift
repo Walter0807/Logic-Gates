@@ -3,19 +3,19 @@ import UIKit
 
 private let gatePrice = [2,2,1,1,1,4,3]
 private var truthTableData = [["a", "b", "c", "ans", "result"],
-                             ["0", "0", "0", "1", " "],
+                             ["0", "0", "0", "0", " "],
                              ["0", "0", "1", "1", " "],
                              ["0", "1", "0", "0", " "],
                              ["0", "1", "1", "1", " "],
                              ["1", "0", "0", "0", " "],
                              ["1", "0", "1", "1", " "],
                              ["1", "1", "0", "1", " "],
-                             ["1", "1", "1", "1", " "]]
+                             ["1", "1", "1", "0", " "]]
 private var truthTableDataOriginal = truthTableData
 private var priceTableData = ["Quantity", "0", "0", "0", "0", "0", "0", "0"]
-private let budget = 6
+private let budget = 7
 
-public class AdvancedPage1ViewController: UIViewController{
+public class AdvancedPage2ViewController: UIViewController{
     
     var priceTable: GridViewController!
     var truthTable: GridViewController!
@@ -133,6 +133,7 @@ private func getPriceRow() -> [String] {
     }
     return prices
 }
+
 
 
 

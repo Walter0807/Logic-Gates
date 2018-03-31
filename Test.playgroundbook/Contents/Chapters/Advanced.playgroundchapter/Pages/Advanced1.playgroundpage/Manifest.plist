@@ -10,5 +10,7 @@
 	<string>VisibleByDefault</string>
 	<key>LiveViewEdgeToEdge</key>
 	<true/>
+	<key>PlaygroundLoggingMode</key>
+	<string>Off</string>
 </dict>
 </plist>

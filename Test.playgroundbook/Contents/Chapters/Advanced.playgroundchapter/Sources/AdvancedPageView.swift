@@ -72,15 +72,6 @@ public class SentenceView: UIView {
     }
 }
 
-
-public func getPriceRow() -> [String] {
-    var prices = ["Price"]
-    for pr in gatePrice {
-        prices += [String(pr)]
-    }
-    return prices
-}
-
 public let contentString = [" ", "Ooops! Your circuit doesn’t work as expected.", "It seems that your circuit costs too much..."]
 
 
