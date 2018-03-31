@@ -5,7 +5,7 @@ import CoreGraphics
 
 public class BuildXORView: UIView{
     public var inputState = [Int]()
-    public var flipResults = [trueFalseResultView]()
+    public var flipResults = [TrueFalseResultView]()
     
     public override func draw(_ rect: CGRect){
         drawCircuit(frame: rect)
@@ -15,17 +15,17 @@ public class BuildXORView: UIView{
     }
     
     public func drawValues(frame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 350)) {
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 15, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 101, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 153, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 239, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 220, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 315, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 190, y: frame.minY + 72, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 190, y: frame.minY + 184, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 311, y: frame.minY + 140, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 311, y: frame.minY + 253, width: 26, height: 29))]
-        flipResults += [trueFalseResultView(frame: CGRect(x: frame.minX + 431, y: frame.minY + 196, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 15, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 101, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 153, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 239, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 220, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 160, y: frame.minY + 315, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 190, y: frame.minY + 72, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 190, y: frame.minY + 184, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 311, y: frame.minY + 140, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 311, y: frame.minY + 253, width: 26, height: 29))]
+        flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 431, y: frame.minY + 196, width: 26, height: 29))]
 
         for fR in flipResults {
             fR.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)

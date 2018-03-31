@@ -1,16 +1,7 @@
 /*:
- - Note:
- You may have noticed that some gates are "replaceable", which means their functions can be **fully** replaced by some other gates.
- \
- \
- As a matter of fact, *Charles Sanders Peirce* (during 1880–81) showed that [NOR gates](glossary://NOR%20gate) alone (or alternatively [NAND gates](glossary://NAND%20gate) alone) can be used to reproduce the functions of all the other logic gates. The first published proof was by *Henry M. Sheffer* in 1913, so the NAND logical operation is sometimes called Sheffer stroke; the logical NOR is sometimes called Peirce's arrow. Consequently, these gates are sometimes called [universal logic gates](glossary://universal%20logic%20gate).
- \
- \
- On the next two pages, you'll try to prove this theorem partly.
- 
- 
- Now, let's create a [OR gate](glossary://OR%20gate) using [NAND gates](glossary://NAND%20gate) **only**.\
- As is shown on the right, the circuit is already built. Your task is to decide the inputs in order to make the circuit function just as a [OR gate](glossary://OR%20gate).\
+
+On this page, you will create a [XOR gate](glossary://XOR%20gate) using [NOR gates](glossary://NOR%20gate) **only**.\
+As is shown on the right, the circuit is already built. Your task is to decide the inputs in order to make the circuit function just as a [XOR gate](glossary://XOR%20gate).\
  Related [truth tables](glossary://truth%20table) are posted as references.
  */
 //#-hidden-code
@@ -89,7 +80,7 @@ if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NAND gate](glossary://NAND%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same."], solution: " ")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NOR gate](glossary://NOR%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same.", "Pay attention to the symmetry."], solution: "`let c = NOR(a,a)\nlet d = NOR(b,b)\nlet y = NOR(a,b)`")
 }
 
 //#-end-hidden-code

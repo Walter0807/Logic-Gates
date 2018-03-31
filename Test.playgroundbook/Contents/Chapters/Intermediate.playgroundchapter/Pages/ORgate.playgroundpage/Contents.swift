@@ -81,10 +81,10 @@ timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
 
 CFRunLoopRun()
 if success {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Great! Let's try a [harder one](@next).")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NAND gate](glossary://NAND%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same."], solution: "`let x = NAND(a,a)\nlet y = NAND(b,b)`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NAND gate](glossary://NAND%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same.", "Pay attention to the symmetry."], solution: "`let x = NAND(a,a)\nlet y = NAND(b,b)`")
 }
 
 //#-end-hidden-code

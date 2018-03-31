@@ -50,10 +50,8 @@ class GridViewLayout: UICollectionViewLayout {
                 }
                 
 
-                if section <= 3 && index <= 3 {
+                if index <= 2 {
                     attributes.zIndex = 1024
-                }else if section == 0 || index == 0 {
-                    attributes.zIndex = 1
                 }
                 
 
