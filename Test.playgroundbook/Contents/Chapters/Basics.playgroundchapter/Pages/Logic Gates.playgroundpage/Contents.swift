@@ -1,6 +1,6 @@
 /*:
 
- **Boolean operations** can be used to describe connections between multiple [Boolean variables](glossary://Boolean%20variables). The basic operations of Boolean algebra are `AND`, `OR`, `NOT`.
+ **Boolean operations** can be used to describe connections between [Boolean variables](glossary://Boolean%20variables). The basic operations of Boolean algebra are `AND`, `OR`, `NOT`.
  
  A **logic gate** is a physical device which implements a Boolean operation; that is, it performs a logical operation on 1 or 2 binary inputs and produces a single binary output.
  
@@ -51,8 +51,11 @@ let 👍 = Var(/*#-editable-code*/false/*#-end-editable-code*/)
 let 👎 = NOT(👍)
 
 /*:
-Tap *"Run My Code"* to check the results.
-When you are ready, move on to the [next page](@next)
+Tap *"Run My Code"* to check the results.\
+\
+Both `1` and `T` are used to denote `true`, while both `0` and `F` are used to denote `false`.\
+\
+When you are ready, move on to the [next page](@next).
  */
 
 //#-hidden-code
@@ -61,7 +64,7 @@ let updateString = 🖋.str() + 📄.str() + 🍨.str() + 🍦.str() + 👍.str(
 updateView(updateString)
 
 if 📝 == Var(true) && 😍 == Var(true) && 👎 == Var(false){
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Now let's [proceed](@next).")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "It's a pretty solid start. Now let's [proceed](@next).")
 }
 else{
     PlaygroundPage.current.assessmentStatus = .fail(hints: ["Try using the [truth table](glossary://truth%20table) above."], solution: "Set every variable to `true` may be a good choice.")

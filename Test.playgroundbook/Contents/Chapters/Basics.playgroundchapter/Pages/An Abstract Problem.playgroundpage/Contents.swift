@@ -35,7 +35,10 @@ func Test(_ a: Var, _ b: Var) -> Var{
     let z = /*#-editable-code*/ AND(c, NOT(d)) /*#-end-editable-code*/
     
 /*:
-Tap *"Run My Code"* to check the result.
+Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\
+\
+Both `1` and `T` are used to denote `true`, while both `0` and `F` are used to denote `false`.\
+\
 [Next chapter](@next) will introduce more **logic gates**.
 */
     //#-hidden-code
@@ -73,7 +76,7 @@ if success {
     PlaygroundPage.current.assessmentStatus = .pass(message: "More gates are [arriving](@next)...")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Use introduced variables as helper"], solution: "`let z = AND(c, NOT(d))`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Use introduced variables as helpers."], solution: "`let z = AND(c, NOT(d))`")
 }
 //#-end-hidden-code
 
