@@ -2,6 +2,8 @@
 Design a 3-input circuit that implements the `ans` column of the [truth table](glossary://truth%20table) on the right.
 
 Below is a clumsy attempt. It functions well but is way too expensive. **Try to redesign it!**
+ 
+As the complexity of design increases, a helper function `watch(variable: Var, title: String)` is introduced. You can add as many variables as you want to the [truth table](glossary://truth%20table) to help analyze the problem.
  */
 //#-hidden-code
 import PlaygroundSupport
@@ -9,7 +11,7 @@ allowGates = [true,true,true,true,true,true,true]
 gatesCount = [0,0,0,0,0,0,0,0]
 let gatePrice = [2,2,1,1,1,4,3]
 var cost = 0
-let budget = 7
+let budget = 5
 var sentence = String()
 var cols:Dictionary<String, [String]> = [:]
 var iter = 0
@@ -62,12 +64,12 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     let caseTwo = AND(na, c)
     let caseThree = AND(nb, c)
     //If you want to watch many variables, slide the truth table.
-    watch(variable: na, title:"NOT a")
-    watch(variable: nb, title:"NOT b")
-    watch(variable: nc, title:"NOT c")
-    watch(variable: caseOne, title:"Case 1")
-    watch(variable: caseTwo, title:"Case 2")
-    watch(variable: caseThree, title:"Case 3")
+    watch(variable: na, title: "NOT a")
+    watch(variable: nb, title: "NOT b")
+    watch(variable: nc, title: "NOT c")
+    watch(variable: caseOne, title: "Case 1")
+    watch(variable: caseTwo, title: "Case 2")
+    watch(variable: caseThree, title: "Case 3")
     //#-end-editable-code
     let result = /*#-editable-code*/OR(OR(caseOne, caseTwo), caseThree)/*#-end-editable-code*/
     //#-end-editable-code

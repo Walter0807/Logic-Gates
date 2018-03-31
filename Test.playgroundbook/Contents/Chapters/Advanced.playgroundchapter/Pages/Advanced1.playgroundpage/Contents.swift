@@ -73,9 +73,8 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     let caseOne = AND(AND(na, b), nc)
     let caseTwo = AND(AND(a, nb), nc)
     //Add variables you want to observe to the truth table like this:
-    watch(variable: na, title:"NOT a")
-    watch(variable: nb, title:"NOT b")
-    watch(variable: nc, title:"NOT c")
+    watch(variable: caseOne, title:"Case 1")
+    watch(variable: caseTwo, title:"Case 2")
     //#-end-editable-code
     let result = /*#-editable-code*/NOR(caseOne, caseTwo)/*#-end-editable-code*/
     return result
