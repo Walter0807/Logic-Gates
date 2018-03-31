@@ -68,9 +68,9 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
 }
 
 /*:
- Tap *"Run My Code"* to check the result.\
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs and the **overall cost** is no more than the **budget**.\
  **Tip:**\
- Run the code constantly as you design your circuit. Keep track of your cost and variables.\
+ Run the code constantly as you design your circuit in order to keep track of the cost and the variables.\
  **References:**\
  [AND gate](glossary://AND%20gate), [OR gate](glossary://OR%20gate), [NOT gate](glossary://NOT%20gate)\
  [NAND gate](glossary://NAND%20gate), [NOR gate](glossary://NOR%20gate), [XOR gate](glossary://XOR%20gate), [XNOR gate](glossary://XNOR%20gate)\

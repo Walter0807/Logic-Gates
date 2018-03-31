@@ -11,7 +11,7 @@ allowGates = [true,true,true,true,true,true,true]
 gatesCount = [0,0,0,0,0,0,0,0]
 let gatePrice = [2,2,1,1,1,4,3]
 var cost = 0
-let budget = 5
+let budget = 7
 var sentence = String()
 var cols:Dictionary<String, [String]> = [:]
 var iter = 0
@@ -63,7 +63,7 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     let caseOne = AND(AND(a, b), nc)
     let caseTwo = AND(na, c)
     let caseThree = AND(nb, c)
-    //If you want to watch many variables, slide the truth table.
+    //If you want to watch many variables, slide the truth table to keep track of them all.
     watch(variable: na, title: "NOT a")
     watch(variable: nb, title: "NOT b")
     watch(variable: nc, title: "NOT c")
@@ -77,9 +77,9 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
 }
 
 /*:
- Tap *"Run My Code"* to check the result.\
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs and the **overall cost** is no more than the **budget**.\
  **Tip:**\
- Run the code constantly as you design your circuit. Keep track of your cost and variables.\
+ Run the code constantly as you design your circuit in order to keep track of the cost and the variables.\
  **References:**\
  [AND gate](glossary://AND%20gate), [OR gate](glossary://OR%20gate), [NOT gate](glossary://NOT%20gate)\
  [NAND gate](glossary://NAND%20gate), [NOR gate](glossary://NOR%20gate), [XOR gate](glossary://XOR%20gate), [XNOR gate](glossary://XNOR%20gate)\
@@ -125,7 +125,7 @@ if !success {
     sentence = "*1"
 }
 else if cost>budget{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is **way too expensive**. Consider using a XOR gate."], solution: "`let result = XOR(c, AND(a, b))`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is **too expensive**. Consider using a XOR gate."], solution: "`let result = XOR(c, AND(a, b))`")
     sentence = "*2"
 }else {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Awesome insight! Ready to [move on](@next)?")

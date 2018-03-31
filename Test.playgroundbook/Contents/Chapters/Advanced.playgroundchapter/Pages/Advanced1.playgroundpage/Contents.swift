@@ -1,6 +1,6 @@
 /*:
  - Note:
-In this chapter, you will deal with three input signals and build a logic circuit implementing the logic given by the [truth table](glossary://truth%20table). You can use **all** the logic gates introduced in this playground. You may also want to use [De Morgan's laws](glossary://De%20Morgan's%20laws).
+In this chapter, you will deal with **three input signals** and build a logic circuit implementing the logic given by the [truth table](glossary://truth%20table). You can use **all** the logic gates introduced in this playground. You may also want to use [De Morgan's laws](glossary://De%20Morgan's%20laws).
  \
  \
 In pratical circuit design, designers do [logic minimization](glossary://logic%20minimization) under time and space trade-offs. The "simplicity" are often measured by the number of gates, number of literals it contains, or by number of cascaded levels of gates.
@@ -80,9 +80,9 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     return result
 }
 /*:
- Tap *"Run My Code"* to check the result.\
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs and the **overall cost** is no more than the **budget**.\
  **Tip:**\
- Run the code constantly as you design your circuit. Keep track of your cost and variables.\
+ Run the code constantly as you design your circuit in order to keep track of the cost and the variables.\
  **References:**\
  [AND gate](glossary://AND%20gate), [OR gate](glossary://OR%20gate), [NOT gate](glossary://NOT%20gate)\
  [NAND gate](glossary://NAND%20gate), [NOR gate](glossary://NOR%20gate), [XOR gate](glossary://XOR%20gate), [XNOR gate](glossary://XNOR%20gate)\
@@ -124,7 +124,7 @@ if !success {
     sentence = "*1"
 }
 else if cost>budget{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is **way too expensive**. Maybe you can find replacement of gates to reduce the cost."], solution: "`let result = OR(c, XNOR(a, b)`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Maybe you can find replacement of gates to reduce the cost. Just focus on the two situations resulting false output."], solution: "`let result = OR(c, XNOR(a, b)`")
     sentence = "*2"
 }else {
     PlaygroundPage.current.assessmentStatus = .pass(message: "Nice job! Try [another one](@next).")
