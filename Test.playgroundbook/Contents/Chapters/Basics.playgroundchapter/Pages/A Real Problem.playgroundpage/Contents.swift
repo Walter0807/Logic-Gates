@@ -29,7 +29,7 @@ func Test(_ 🏀: Var, _ 📚: Var) -> Var{
     //#-code-completion(keyword, show, let)
     //#-code-completion(description, show, "AND(input1: Var, input2: Var)", "OR(input1: Var, input2: Var)", "NOT(input: Var)")
     //#-code-completion(identifier, show, 🏀, 📚)
-    //Now implement this expression to model the boy's happiness.
+//Now implement this expression to model the boy's happiness.
     let 😁 = /*#-editable-code your expression here*/AND(🏀,NOT(📚))/*#-end-editable-code*/
 /*:
  Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\

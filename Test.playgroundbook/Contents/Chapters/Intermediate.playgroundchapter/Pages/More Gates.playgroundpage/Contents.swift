@@ -10,7 +10,7 @@ Despite the 3 basic logic gates, another 4 gates are also widely used:
 
  * Experiment:
  Again let's set the input values of the logic gates:
-     1. Set inputs `b`, `d` properly.
+     1. Set inputs `b`, `d` to proper values.
      2. Make `x` `true`.
      3. Make `z` `false`.
 
@@ -37,7 +37,10 @@ let y = NOR(c,d)
 let m = XOR(x, y), n = Var(true)
 let z = XNOR(m,n)
 /*:
- Tap *"Run My Code"* to check the results.
+ Tap *"Run My Code"* to check the results.\
+ \
+ Both `1` and `T` are used to denote `true`, while both `0` and `F` are used to denote `false`.\
+ \
  When you are ready, move on to the [next page](@next). Interesting stuff ahead.
  */
 //#-hidden-code

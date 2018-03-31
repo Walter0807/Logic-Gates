@@ -1,7 +1,9 @@
 /*:
 
 On this page, you will create a [XOR gate](glossary://XOR%20gate) using [NOR gates](glossary://NOR%20gate) **only**.\
+ \
 As is shown on the right, the circuit is already built. Your task is to decide the inputs in order to make the circuit function just as a [XOR gate](glossary://XOR%20gate).\
+ \
  Related [truth tables](glossary://truth%20table) are posted as references.
  */
 //#-hidden-code
@@ -27,11 +29,19 @@ func myXORGate(_ a: VarID, _ b: VarID) -> VarID{
     //#-code-completion(everything, hide)
     //#-code-completion(identifier, show, a, b)
     //#-code-completion(keyword, show, let)
+//Use a and b as input variables.
     let c = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
     let d = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
     let x = NOR(c,d)
     let y = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
     let z = NOR(x,y)
+/*:
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\
+ \
+ Both `1` and `T` denote `true`, while both `0` and `F` denote `false`.\
+ \
+ On [next chapter](@next), another interesting problem is presented with similar philosophy.
+ */
     //#-hidden-code
     gateX = x
     gateY = y
@@ -39,11 +49,6 @@ func myXORGate(_ a: VarID, _ b: VarID) -> VarID{
     gateD = d
     return z
 }
-
-/*:
- Tap *"Run My Code"* to check the result.
- [Next chapter](@next) will provide you with more fun stuff.
- */
 
 //Drawing
 let tmp = myXORGate(VarID(0, 1), VarID(0, 2))
@@ -77,10 +82,10 @@ timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
 
 CFRunLoopRun()
 if success {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement of gates is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
 }
 else{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NOR gate](glossary://NOR%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same.", "Pay attention to the symmetry."], solution: "`let c = NOR(a,a)\nlet d = NOR(b,b)\nlet y = NOR(a,b)`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NOR gate](glossary://NOR%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same.", "Pay attention to the symmetry."], solution: "```swift\nlet c = NOR(a,a)\nlet d = NOR(b,b)\nlet y = NOR(a,b)")
 }
 
 //#-end-hidden-code
