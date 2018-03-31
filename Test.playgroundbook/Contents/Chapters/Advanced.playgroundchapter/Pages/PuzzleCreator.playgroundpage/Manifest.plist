@@ -5,13 +5,12 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Advanced</string>
-	<key>Pages</key>
-	<array>
-		<string>Advanced1.playgroundpage</string>
-		<string>Advanced2.playgroundpage</string>
-		<string>Advanced3.playgroundpage</string>
-		<string>PuzzleCreator.playgroundpage</string>
-	</array>
+	<string>Puzzle Creator</string>
+	<key>LiveViewMode</key>
+	<string>VisibleByDefault</string>
+	<key>LiveViewEdgeToEdge</key>
+	<true/>
+	<key>PlaygroundLoggingMode</key>
+	<string>Off</string>
 </dict>
 </plist>

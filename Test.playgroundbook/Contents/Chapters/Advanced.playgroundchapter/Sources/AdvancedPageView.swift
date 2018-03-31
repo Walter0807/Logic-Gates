@@ -3,6 +3,7 @@ import UIKit
 public class MoneyView: UIView {
     public var budget = Int() { didSet { setNeedsDisplay(); setNeedsLayout() } }
     public var costView = CostLabel()
+    public var budgetString = String()
     public override func draw(_ rect: CGRect){
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setMoneyLabels(frame: rect)
@@ -18,7 +19,8 @@ public class MoneyView: UIView {
     
     func setMoneyLabels(frame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 500)) {
         setLabel("Budget: ", CGRect(x: frame.minX, y: frame.minY, width: 120, height: 80))
-        setLabel(String(budget), CGRect(x: frame.minX + 120, y: frame.minY, width: 80, height: 80))
+        if budget>0 {budgetString = String(budget)} else {budgetString = " "}
+        setLabel(budgetString, CGRect(x: frame.minX + 120, y: frame.minY, width: 80, height: 80))
         setLabel("Cost: ", CGRect(x: frame.minX + 200, y: frame.minY, width: 120, height: 80))
         costView = CostLabel(frame: CGRect(x: frame.minX + 320, y: frame.minY, width: 80, height: 80))
         costView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
