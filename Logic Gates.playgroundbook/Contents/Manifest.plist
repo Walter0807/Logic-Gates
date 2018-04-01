@@ -11,7 +11,7 @@
 	<key>ContentVersion</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Gates</string>
+	<string>Logic Gates</string>
 	<key>ContentIdentifier</key>
 	<string>com.walterzhu.Gates</string>
 	<key>DeploymentTarget</key>

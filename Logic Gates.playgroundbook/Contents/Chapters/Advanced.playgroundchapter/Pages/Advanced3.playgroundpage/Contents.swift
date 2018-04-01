@@ -50,7 +50,7 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     //#-code-completion(description, show, "OR(input1: Var, input2: Var)")
     //#-code-completion(description, show, "XOR(input1: Var, input2: Var)")
     //#-code-completion(description, show, "XNOR(input1: Var, input2: Var)")
-    //#-code-completion(description, show, "NOT(input: let)")
+    //#-code-completion(description, show, "NOT(input: Var)")
     //#-code-completion(identifier, show, a, b, c)
     //#-code-completion(keyword, show, let)
     //#-code-completion(currentmodule, show)

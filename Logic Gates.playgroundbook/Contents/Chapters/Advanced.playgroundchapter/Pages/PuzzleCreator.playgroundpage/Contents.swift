@@ -1,29 +1,16 @@
 /*:
- - Note:
-In this chapter, you will deal with **three input signals** and build a logic circuit implementing the logic given by the [truth table](glossary://truth%20table). You can use **all** the logic gates introduced in this playground. You may also want to use [De Morgan's laws](glossary://De%20Morgan's%20laws).
- \
- \
-In pratical circuit design, designers do [logic minimization](glossary://logic%20minimization) under time and space trade-offs. The "simplicity" are often measured by the number of gates, number of literals it contains, or by number of cascaded levels of gates.
- \
- \
-In this chapter, such constraints and balances are simply abstracted to a **"cost"** for every gate and an overall **"budget"** for the entire circuit.
- 
- 
- 
-Now, let's design a 3-input circuit that produces output as the `ans` column of the [truth table](glossary://truth%20table) on the right.
- 
-Below is a clumsy attempt. It functions well but is way too expensive. **Try to redesign it!**
- 
- As the complexity of design increases, a helper function `watch(variable: Var, title: String)` is introduced. You can add as many variables as you want to the [truth table](glossary://truth%20table) to help analyze the problem.
+ On this page, you can create *"Build Your Circuit"* puzzles. You may create very difficult ones and pass them to your geek friends. :)\
+\
+**To create a puzzle, three things should be set: prices of the gates, total budget, and the "ans" column.**
  */
 //#-hidden-code
 import PlaygroundSupport
 allowGates = [true,true,true,true,true,true,true]
 gatesCount = [0,0,0,0,0,0,0,0]
-let gatePrice = [2,2,1,1,1,4,3]
+
 var cost = 0
-let budget = 6
 var sentence = String()
+var updateString = String()
 var cols:Dictionary<String, [String]> = [:]
 var iter = 0
 var watchSequence = [String]()
@@ -55,13 +42,38 @@ func watch(variable x: Var, title name: String) {
 
 //#-end-hidden-code
 //#-code-completion(everything, hide)
+let gatePrice = [/*#-editable-code*/<#T##AND##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##OR##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##NOT##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##NAND##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##NOR##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##XOR##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##XNOR##Int#>/*#-end-editable-code*/]
+let budget = /*#-editable-code*/<#T##Total Budget##Int#>/*#-end-editable-code*/
+//#-code-completion(identifier, show, true, false)
+let ans = [/*#-editable-code*/<#T##state 000##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 001##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 010##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 011##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 100##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 101##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 110##Bool#>/*#-end-editable-code*/,
+           /*#-editable-code*/<#T##state 110##Bool#>/*#-end-editable-code*/]
+//#-hidden-code
+updateString = gatePrice.reduce("&", {$0 + " " + String($1)})
+updateView(updateString)
+
+updateString = "$ " + String(budget)
+updateView(updateString)
+
+updateString = ans.reduce("#", {$0 + " " + Var($1).str()})
+updateView(updateString)
+//#-end-hidden-code
+/*:
+**Now try to solve the puzzle.**
+ */
+//#-code-completion(everything, hide)
 //#-code-completion(description, show, "NAND(input1: Var, input2: Var)")
 //#-code-completion(description, show, "AND(input1: Var, input2: Var)")
 //#-code-completion(description, show, "NOR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "OR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "XOR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "XNOR(input1: Var, input2: Var)")
-//#-code-completion(description, show, "NOT(input: let)")
+//#-code-completion(description, show, "NOT(input: Var)")
 //#-code-completion(identifier, show, a, b, c)
 //#-code-completion(keyword, show, let)
 //#-code-completion(currentmodule, show)
@@ -69,14 +81,9 @@ func watch(variable x: Var, title name: String) {
 //#-code-completion(description, hide, "myCircuit(a: Var, b: Var, c: Var)", "updateCost(message: Int)", "updateView(message: String)")
 func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     //#-editable-code
-    let na = NOT(a), nb = NOT(b), nc = NOT(c)
-    let caseOne = AND(AND(na, b), nc)
-    let caseTwo = AND(AND(a, nb), nc)
-    //Add variables you want to observe to the truth table like this:
-    watch(variable: caseOne, title:"Case 1")
-    watch(variable: caseTwo, title:"Case 2")
+//Do calculations and watch variables.
     //#-end-editable-code
-    let result = /*#-editable-code*/NOR(caseOne, caseTwo)/*#-end-editable-code*/
+    let result = /*#-editable-code*/a/*#-end-editable-code*/
     return result
 }
 /*:
@@ -88,11 +95,9 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
  [NAND gate](glossary://NAND%20gate), [NOR gate](glossary://NOR%20gate), [XOR gate](glossary://XOR%20gate), [XNOR gate](glossary://XNOR%20gate)\
  [De Morgan's laws](glossary://De%20Morgan's%20laws)
  */
-
-
 //#-hidden-code
-let correctAnswer = [Var(true), Var(true), Var(false), Var(true), Var(false), Var(true), Var(true), Var(true)]
-var updateString = "!"
+let correctAnswer = ans.map({Var($0)})
+updateString = "!"
 
 var success = true
 for i in 0..<8 {
@@ -132,15 +137,6 @@ else if cost>budget{
 }
 updateView(sentence)//Status Message
 //#-end-hidden-code
-
-
-
-
-
-
-
-
-
 
 
 

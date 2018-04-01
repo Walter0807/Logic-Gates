@@ -1,9 +1,20 @@
 /*:
-Design a 3-input circuit that implements the `ans` column of the [truth table](glossary://truth%20table) on the right.
-
+ - Note:
+In this chapter, you will deal with **three input signals** and build a logic circuit implementing the logic given by the [truth table](glossary://truth%20table). You can use **all** the logic gates introduced in this playground. You may also want to use [De Morgan's laws](glossary://De%20Morgan's%20laws).
+ \
+ \
+In pratical circuit design, designers do [logic minimization](glossary://logic%20minimization) under time and space trade-offs. The "simplicity" are often measured by the number of gates, number of literals it contains, or by number of cascaded levels of gates.
+ \
+ \
+In this chapter, such constraints and balances are simply abstracted to a **"cost"** for every gate and an overall **"budget"** for the entire circuit.
+ 
+ 
+ 
+Now, let's design a 3-input circuit that produces output as the `ans` column of the [truth table](glossary://truth%20table) on the right.
+ 
 Below is a clumsy attempt. It functions well but is way too expensive. **Try to redesign it!**
  
-As the complexity of design increases, a helper function `watch(variable: Var, title: String)` is introduced. You can add as many variables as you want to the [truth table](glossary://truth%20table) to help analyze the problem.
+ As the complexity of design increases, a helper function `watch(variable: Var, title: String)` is introduced. You can add as many variables as you want to the [truth table](glossary://truth%20table) to help analyze the problem.
  */
 //#-hidden-code
 import PlaygroundSupport
@@ -11,7 +22,7 @@ allowGates = [true,true,true,true,true,true,true]
 gatesCount = [0,0,0,0,0,0,0,0]
 let gatePrice = [2,2,1,1,1,4,3]
 var cost = 0
-let budget = 7
+let budget = 6
 var sentence = String()
 var cols:Dictionary<String, [String]> = [:]
 var iter = 0
@@ -50,32 +61,24 @@ func watch(variable x: Var, title name: String) {
 //#-code-completion(description, show, "OR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "XOR(input1: Var, input2: Var)")
 //#-code-completion(description, show, "XNOR(input1: Var, input2: Var)")
-//#-code-completion(description, show, "NOT(input: let)")
+//#-code-completion(description, show, "NOT(input: Var)")
 //#-code-completion(identifier, show, a, b, c)
 //#-code-completion(keyword, show, let)
 //#-code-completion(currentmodule, show)
 //#-code-completion(identifier, hide, correctAnswer, success, result, budget, cost, gatePrice, updateString, cols, iter, sentence, watchSequence)
 //#-code-completion(description, hide, "myCircuit(a: Var, b: Var, c: Var)", "updateCost(message: Int)", "updateView(message: String)")
 func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
-    
     //#-editable-code
     let na = NOT(a), nb = NOT(b), nc = NOT(c)
-    let caseOne = AND(AND(a, b), nc)
-    let caseTwo = AND(na, c)
-    let caseThree = AND(nb, c)
-    //If you want to watch many variables, slide the truth table to keep track of them all.
-    watch(variable: na, title: "NOT a")
-    watch(variable: nb, title: "NOT b")
-    watch(variable: nc, title: "NOT c")
-    watch(variable: caseOne, title: "Case 1")
-    watch(variable: caseTwo, title: "Case 2")
-    watch(variable: caseThree, title: "Case 3")
+    let caseOne = AND(AND(na, b), nc)
+    let caseTwo = AND(AND(a, nb), nc)
+    //Add variables you want to observe to the truth table like this:
+    watch(variable: caseOne, title:"Case 1")
+    watch(variable: caseTwo, title:"Case 2")
     //#-end-editable-code
-    let result = /*#-editable-code*/OR(OR(caseOne, caseTwo), caseThree)/*#-end-editable-code*/
-    //#-end-editable-code
+    let result = /*#-editable-code*/NOR(caseOne, caseTwo)/*#-end-editable-code*/
     return result
 }
-
 /*:
  Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs and the **overall cost** is no more than the **budget**.\
  **Tip:**\
@@ -86,11 +89,9 @@ func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
  [De Morgan's laws](glossary://De%20Morgan's%20laws)
  */
 
+
 //#-hidden-code
-
-
-let correctAnswer = [Var(false), Var(true), Var(false), Var(true), Var(false), Var(true), Var(true), Var(false)]
-
+let correctAnswer = [Var(true), Var(true), Var(false), Var(true), Var(false), Var(true), Var(true), Var(true)]
 var updateString = "!"
 
 var success = true
@@ -118,21 +119,23 @@ for i in 0...6{
 updateView(updateString)//Price Table
 updateCost(cost)//Cost
 
-
-
 if !success {
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Take care of your variables. Consider using a XOR gate."], solution: "`let result = XOR(c, AND(a, b))`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Think about the two situations resulting false output."], solution: "`let result = OR(c, XNOR(a, b)`")
     sentence = "*1"
 }
 else if cost>budget{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Your circuit is **too expensive**. Consider using a XOR gate."], solution: "`let result = XOR(c, AND(a, b))`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Maybe you can find replacement of gates to reduce the cost. Just focus on the two situations resulting `false` output."], solution: "`let result = OR(c, XNOR(a, b)`")
     sentence = "*2"
 }else {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Awesome insight! Ready to [move on](@next)?")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Nice job! Try [another one](@next).")
     sentence = "*0"
 }
 updateView(sentence)//Status Message
 //#-end-hidden-code
+
+
+
+
 
 
 

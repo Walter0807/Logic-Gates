@@ -2,7 +2,7 @@
 
 On this page, you will create a [XOR gate](glossary://XOR%20gate) using [NOR gates](glossary://NOR%20gate) **only**.\
  \
-As is shown on the right, the circuit is already built. Your task is to decide the inputs in order to make the circuit function just as a [XOR gate](glossary://XOR%20gate).\
+As is shown on the right, the circuit is already built. Your task is to decide the inputs in order to make the **whole circuit** function just as a [XOR gate](glossary://XOR%20gate).\
  \
  Related [truth tables](glossary://truth%20table) are posted as references.
  */
