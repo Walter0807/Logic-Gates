@@ -11,7 +11,7 @@ public class MoreGatesView: UIView{
     public func redraw() {
         setNeedsDisplay()
     }
-    
+    //The drawing codes are created with the aid of PaintCode
     func drawMoreGates(frame: CGRect = CGRect(x: 0, y: 0, width: 540, height: 500)) {
         
         //// General Declarations

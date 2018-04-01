@@ -11,7 +11,7 @@ public class BasicGatesView: UIView{
     public func redraw() {
         setNeedsDisplay()
     }
-    
+    //The drawing codes are created with the aid of PaintCode
     func drawBasicGates(frame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 500)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!

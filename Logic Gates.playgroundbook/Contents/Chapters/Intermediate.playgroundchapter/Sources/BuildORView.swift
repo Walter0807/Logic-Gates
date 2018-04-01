@@ -14,7 +14,7 @@ public class BuildORView: UIView{
     public func redraw() {
         setNeedsDisplay()
     }
-    
+    //The drawing codes are created with the aid of PaintCode
     public func drawValues(frame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 350)) {
         flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 61, y: frame.minY + 16, width: 38, height: 40))]
         flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 61, y: frame.minY + 89, width: 38, height: 40))]

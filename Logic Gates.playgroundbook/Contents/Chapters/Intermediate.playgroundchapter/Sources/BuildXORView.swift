@@ -13,7 +13,7 @@ public class BuildXORView: UIView{
     public func redraw() {
         setNeedsDisplay()
     }
-    
+    //The drawing codes are created with the aid of PaintCode
     public func drawValues(frame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 350)) {
         flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 15, width: 26, height: 29))]
         flipResults += [TrueFalseResultView(frame: CGRect(x: frame.minX + 30, y: frame.minY + 101, width: 26, height: 29))]

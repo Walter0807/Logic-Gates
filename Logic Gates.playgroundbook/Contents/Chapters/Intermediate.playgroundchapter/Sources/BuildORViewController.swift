@@ -65,7 +65,6 @@ public class BuildORViewController: UIViewController{
                 }
             }
             for i in 4...6{
-                //gatesPreview.backgroundColor = UIColor.red
                 if gatesPreview.flipResults[i].isTrue != varValue[i - 2]{
                     UIView.transition(
                         with: gatesPreview.flipResults[i],
