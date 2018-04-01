@@ -1,5 +1,5 @@
 /*:
- Design a 3-input circuit that implements the `ans` column of the [truth table](glossary://truth%20table) on the right.
+ Design a 3-input circuit that takes `a`, `b`, `c` as inputs and implements the `ans` column of the [truth table](glossary://truth%20table) on the right.
  
  Below is a clumsy attempt. It functions well but is way too expensive. **Try to redesign it!**
  

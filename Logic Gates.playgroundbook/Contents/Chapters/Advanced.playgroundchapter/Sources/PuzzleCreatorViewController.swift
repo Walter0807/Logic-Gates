@@ -130,9 +130,9 @@ public class PuzzleCreatorViewController: UIViewController{
         else if varsToDisp[varsToDisp.startIndex] == "#" {
             let ans = varsToDisp.components(separatedBy: " ")
             for i in 1...8 {
-                truthTableData[i][3] = ans[i]
+                truthTableDataOriginal[i][3] = ans[i]
             }
-            truthTableDataOriginal = truthTableData
+            truthTableData = truthTableDataOriginal
             truthTable.view.removeFromSuperview()
             setTruthTable()
         }

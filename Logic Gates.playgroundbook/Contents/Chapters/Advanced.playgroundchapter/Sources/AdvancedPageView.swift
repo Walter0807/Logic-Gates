@@ -36,7 +36,7 @@ public class MoneyView: UIView {
             animations: {
                 self.costView.cost = realCost
                 if realCost>self.budget {self.costView.costColor = UIColor.red}
-                else if realCost != 0 {self.costView.costColor = #colorLiteral(red: 0.003166413687, green: 0.8219979378, blue: 0.08768630331, alpha: 1)}
+                else {self.costView.costColor = #colorLiteral(red: 0.003166413687, green: 0.8219979378, blue: 0.08768630331, alpha: 1)}
         })
     }
 }

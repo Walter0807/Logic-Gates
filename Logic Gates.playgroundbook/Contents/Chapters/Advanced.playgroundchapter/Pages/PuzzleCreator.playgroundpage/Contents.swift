@@ -1,7 +1,7 @@
 /*:
- On this page, you can create *"Build Your Circuit"* puzzles. You may create very difficult ones and pass them to your geek friends. :)\
+ On this page, you can create *"Build Your Circuit"* puzzles. You may create very difficult ones and pass them to your geek friends :)\
 \
-**To create a puzzle, three things should be set: prices of the gates, total budget, and the "ans" column.**
+**To create a puzzle, three items should be set: prices of the gates, total budget, and the "ans" column.**
  */
 //#-hidden-code
 import PlaygroundSupport
@@ -42,7 +42,7 @@ func watch(variable x: Var, title name: String) {
 
 //#-end-hidden-code
 //#-code-completion(everything, hide)
-let gatePrice = [/*#-editable-code*/<#T##AND##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##OR##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##NOT##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##NAND##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##NOR##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##XOR##Int#>/*#-end-editable-code*/, /*#-editable-code*/<#T##XNOR##Int#>/*#-end-editable-code*/]
+let gatePrice = [/*#-editable-code*/<#T##AND##Int#>/*#-end-editable-code*/,/*#-editable-code*/<#T##OR##Int#>/*#-end-editable-code*/,/*#-editable-code*/<#T##NOT##Int#>/*#-end-editable-code*/,/*#-editable-code*/<#T##NAND##Int#>/*#-end-editable-code*/,/*#-editable-code*/<#T##NOR##Int#>/*#-end-editable-code*/,/*#-editable-code*/<#T##XOR##Int#>/*#-end-editable-code*/,/*#-editable-code*/<#T##XNOR##Int#>/*#-end-editable-code*/]
 let budget = /*#-editable-code*/<#T##Total Budget##Int#>/*#-end-editable-code*/
 //#-code-completion(identifier, show, true, false)
 let ans = [/*#-editable-code*/<#T##state 000##Bool#>/*#-end-editable-code*/,
@@ -52,7 +52,7 @@ let ans = [/*#-editable-code*/<#T##state 000##Bool#>/*#-end-editable-code*/,
            /*#-editable-code*/<#T##state 100##Bool#>/*#-end-editable-code*/,
            /*#-editable-code*/<#T##state 101##Bool#>/*#-end-editable-code*/,
            /*#-editable-code*/<#T##state 110##Bool#>/*#-end-editable-code*/,
-           /*#-editable-code*/<#T##state 110##Bool#>/*#-end-editable-code*/]
+           /*#-editable-code*/<#T##state 111##Bool#>/*#-end-editable-code*/]
 //#-hidden-code
 updateString = gatePrice.reduce("&", {$0 + " " + String($1)})
 updateView(updateString)
@@ -77,7 +77,7 @@ updateView(updateString)
 //#-code-completion(identifier, show, a, b, c)
 //#-code-completion(keyword, show, let)
 //#-code-completion(currentmodule, show)
-//#-code-completion(identifier, hide, correctAnswer, success, result, budget, cost, gatePrice, updateString, cols, iter, sentence, watchSequence)
+//#-code-completion(identifier, hide, correctAnswer, success, result, budget, cost, gatePrice, updateString, cols, iter, sentence, watchSequence, ans)
 //#-code-completion(description, hide, "myCircuit(a: Var, b: Var, c: Var)", "updateCost(message: Int)", "updateView(message: String)")
 func myCircuit(_ a: Var, _ b: Var, _ c: Var) -> Var{
     //#-editable-code
@@ -117,22 +117,23 @@ for keys in watchSequence {
 
 
 updateString = gatesCount.reduce("%", {$0 + " " + String($1/8)})
+updateView(updateString)//gate counts
+
 cost = 0
 for i in 0...6{
     cost += gatesCount[i]*gatePrice[i]/8
 }
-updateView(updateString)//Price Table
 updateCost(cost)//Cost
 
 if !success {
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Think about the two situations resulting false output."], solution: "`let result = OR(c, XNOR(a, b)`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: [], solution: nil)
     sentence = "*1"
 }
 else if cost>budget{
-    PlaygroundPage.current.assessmentStatus = .fail(hints: ["Maybe you can find replacement of gates to reduce the cost. Just focus on the two situations resulting false output."], solution: "`let result = OR(c, XNOR(a, b)`")
+    PlaygroundPage.current.assessmentStatus = .fail(hints: [], solution: nil)
     sentence = "*2"
 }else {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Nice job! Try [another one](@next).")
+    PlaygroundPage.current.assessmentStatus = .pass(message: nil)
     sentence = "*0"
 }
 updateView(sentence)//Status Message
