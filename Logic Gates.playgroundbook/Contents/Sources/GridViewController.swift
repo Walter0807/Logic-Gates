@@ -4,18 +4,15 @@ import UIKit
 public class GridViewController: UICollectionViewController {
     
     var cols: [String]! = []
-
     var rows: [[Any]]! = []
     public var pageNumber: Int = 0
-    
     public init() {
-
         let layout = GridViewLayout()
         super.init(collectionViewLayout: layout)
         layout.viewController = self
         collectionView!.backgroundColor = UIColor.white
         collectionView!.register(GridViewCell.self,
-                                      forCellWithReuseIdentifier: "cell")
+                                 forCellWithReuseIdentifier: "cell")
         collectionView!.delegate = self
         collectionView!.dataSource = self
         collectionView!.isDirectionalLockEnabled = true
@@ -40,7 +37,7 @@ public class GridViewController: UICollectionViewController {
         super.viewDidLoad()
     }
     
-   public override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         collectionView!.frame = CGRect(x:0, y:0,
                                        width:view.frame.width, height:view.frame.height)
     }
@@ -50,19 +47,19 @@ public class GridViewController: UICollectionViewController {
     }
     
     public override func numberOfSections(in collectionView: UICollectionView) -> Int {
-            if cols.isEmpty {
-                return 0
-            }
-            return rows.count + 1
+        if cols.isEmpty {
+            return 0
+        }
+        return rows.count + 1
     }
     
     public override func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
+                                        numberOfItemsInSection section: Int) -> Int {
         return cols.count
     }
     
     public override func collectionView(_ collectionView: UICollectionView,
-                            cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                       for: indexPath) as! GridViewCell
         

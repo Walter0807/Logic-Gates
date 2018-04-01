@@ -36,7 +36,7 @@ func myXORGate(_ a: VarID, _ b: VarID) -> VarID{
     let y = NOR(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
     let z = NOR(x,y)
 /*:
- Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all possible inputs**.\
  \
  Both `1` and `T` denote `true`, while both `0` and `F` denote `false`.\
  \
@@ -82,7 +82,7 @@ timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
 
 CFRunLoopRun()
 if success {
-    PlaygroundPage.current.assessmentStatus = .pass(message: "Replacement of gates is fun, especially when we build something under a tight budget. Challenges [ahead](@next).")
+    PlaygroundPage.current.assessmentStatus = .pass(message: "Substitution of gates is fun, especially when we build something under **a tight budget**. Challenges [ahead](@next).")
 }
 else{
     PlaygroundPage.current.assessmentStatus = .fail(hints: ["You can turn a [NOR gate](glossary://NOR%20gate) into a [NOT gate](glossary://NOT%20gate) by setting both its inputs to be the same.", "Pay attention to the symmetry."], solution: "```swift\nlet c = NOR(a,a)\nlet d = NOR(b,b)\nlet y = NOR(a,b)")

@@ -1,13 +1,11 @@
 import Foundation
 import UIKit
 
-//多列表格组件布局类
 class GridViewLayout: UICollectionViewLayout {
     
     private var itemAttributes: [[UICollectionViewLayoutAttributes]] = []
     private var itemsSize: [NSValue] = []
     private var contentSize: CGSize = CGSize.zero
-    
     var viewController: GridViewController!
     
     override func prepare() {
@@ -66,18 +64,16 @@ class GridViewLayout: UICollectionViewLayout {
                                                   height:itemSize.height).integral
                     }
                     else if index <= 4 {
-                    attributes.frame = CGRect(x:self.collectionView!.contentOffset.x + CGFloat(index) * itemSize.width - 1
-                        + collectionView!.contentInset.left, y:yOffset, width:itemSize.width+1,
-                                                             height:itemSize.height).integral
+                        attributes.frame = CGRect(x:self.collectionView!.contentOffset.x + CGFloat(index) * itemSize.width - 1
+                            + collectionView!.contentInset.left, y:yOffset, width:itemSize.width+1,
+                                                                 height:itemSize.height).integral
                     }
-
+                    
                 }
                 
                 sectionAttributes.append(attributes)
-                
                 xOffset = xOffset + itemSize.width
                 column += 1
-                
                 if column == viewController.cols.count {
                     if xOffset > contentWidth {
                         contentWidth = xOffset

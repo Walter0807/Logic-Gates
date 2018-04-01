@@ -70,7 +70,7 @@ NAND(x,y) = NOT(AND(x, y)) = OR(NOT(x), NOT(Y))
 		<key>OR gate</key>
 		<dict>
 			<key>Definition</key>
-			<string>A `true` output results if one or both the inputs to the gate are `true`.</string>
+			<string>A `true` output results if one or both of the inputs to the gate are `true`.</string>
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
@@ -118,7 +118,7 @@ NAND(x,y) = NOT(AND(x, y)) = OR(NOT(x), NOT(Y))
 		<key>XOR gate</key>
 		<dict>
 			<key>Definition</key>
-			<string>The output is `true` **only** if both its inputs are different.</string>
+			<string>The output is `true` if the inputs are different.</string>
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
@@ -130,7 +130,7 @@ NAND(x,y) = NOT(AND(x, y)) = OR(NOT(x), NOT(Y))
 		<key>XNOR gate</key>
 		<dict>
 			<key>Definition</key>
-			<string>The output is `true` **only** if both its inputs are the same.</string>
+			<string>The output is `true` if the inputs are same.</string>
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>

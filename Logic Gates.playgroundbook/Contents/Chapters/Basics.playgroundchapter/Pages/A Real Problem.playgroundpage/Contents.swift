@@ -32,9 +32,9 @@ func Test(_ 🏀: Var, _ 📚: Var) -> Var{
 //Now implement this expression to model the boy's happiness.
     let 😁 = /*#-editable-code your expression here*/AND(🏀,NOT(📚))/*#-end-editable-code*/
 /*:
- Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all possible inputs**.\
 \
- On [next page](@next), you will solve a problem based on your own inspection.
+ On [next page](@next), you will solve an abstract problem.
  */
     //#-hidden-code
     return 😁

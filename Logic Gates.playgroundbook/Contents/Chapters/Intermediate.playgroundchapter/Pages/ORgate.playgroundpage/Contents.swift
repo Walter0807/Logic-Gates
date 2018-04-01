@@ -42,7 +42,7 @@ func myORGate(_ a: VarID, _ b: VarID) -> VarID{
     let y = NAND(/*#-editable-code*/<#T##input 1#>/*#-end-editable-code*/,/*#-editable-code*/<#T##input 2#>/*#-end-editable-code*/)
     let z = NAND(x,y)
 /*:
- Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\
+ Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all possible inputs**.\
  \
  Both `1` and `T` denote `true`, while both `0` and `F` denote `false`.\
  \

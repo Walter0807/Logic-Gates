@@ -30,7 +30,6 @@ public class BasicGatesViewController: UIViewController{
     
     public override func viewDidLayoutSubviews() {
         truthTable.view.frame = CGRect(x:view.frame.width/16, y:20, width:view.frame.width*7/8, height:140)
-        //truthTable.view.frame = placeMiddleHalf(view, 20, 500, 140)
         truthTable.view.layer.borderWidth = 1.5
     }
     

@@ -35,7 +35,7 @@ func Test(_ a: Var, _ b: Var) -> Var{
     let z = /*#-editable-code*/ AND(c, NOT(d)) /*#-end-editable-code*/
     
 /*:
-Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all** possible inputs.\
+Tap *"Run My Code"* to check the result. Your answer is correct only when it produces right output for **all possible inputs**.\
 \
 Both `1` and `T` are used to denote `true`, while both `0` and `F` are used to denote `false`.\
 \

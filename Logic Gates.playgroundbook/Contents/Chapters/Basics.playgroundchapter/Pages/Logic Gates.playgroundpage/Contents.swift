@@ -7,7 +7,7 @@
  The basic logic gates are:
  
  - [AND gate](glossary://AND%20gate): A `true` output results **only** if all the inputs to the gate are `true`.
- - [OR gate](glossary://OR%20gate): A `true` output results if one or both the inputs to the gate are `true`.
+ - [OR gate](glossary://OR%20gate): A `true` output results if one or both of the inputs to the gate are `true`.
  - [NOT gate](glossary://NOT%20gate): If the applied input is `false` then the output becomes `true` and vice versa.
  
  The bahavior of these gates are represented by the [truth table](glossary://truth%20table) on the right.
