@@ -6,20 +6,7 @@ I love things which are structurally organized and free to compose. Such things 
 
 ## Screenshots
 
-![IMG_0463.PNG][3]
-![IMG_0462.PNG][1]
-![IMG_0464.PNG][2]
-![IMG_0465.PNG][4]
-![IMG_0472.PNG][5]
-![IMG_0467.PNG][6]
-
-
-[1]: https://www.walterzhu.com/usr/uploads/2018/04/1393747373.png
-[2]: https://www.walterzhu.com/usr/uploads/2018/04/821692853.png
-[3]: https://www.walterzhu.com/usr/uploads/2018/04/455717004.png
-[4]: https://www.walterzhu.com/usr/uploads/2018/04/3128287443.png
-[5]: https://www.walterzhu.com/usr/uploads/2018/04/3301434876.png
-[6]: https://www.walterzhu.com/usr/uploads/2018/04/1361393757.png
+![](http://p3b1oqmkp.bkt.clouddn.com/e9347848d7445a4db17d4f1f7fdbf5bf.jpg)
 
 ## **Note**
 
