@@ -6,13 +6,7 @@ I love things which are structurally organized and free to compose. Such things 
 
 ## Screenshots
 
-![](http://p3b1oqmkp.bkt.clouddn.com/a114a0897677005e2b7f581dc43682ac.PNG)
-
-![](http://p3b1oqmkp.bkt.clouddn.com/cae03bebd488a06b48a985cf9db28f5d.PNG)
-
-![](http://p3b1oqmkp.bkt.clouddn.com/5f41897ddb65f578529121ef477dcdd1.PNG)
-
-![](http://p3b1oqmkp.bkt.clouddn.com/86f0da8fa55c76fa08a72c15e2ceb1c7.PNG)
+![](http://p3b1oqmkp.bkt.clouddn.com/e1f86a4a9b12c9f417c4938fce8b3b13.PNG)![](http://p3b1oqmkp.bkt.clouddn.com/f095812ee4575a3a54af64566845b3fa.PNG)![](http://p3b1oqmkp.bkt.clouddn.com/5bbd556a2766ec8a50b644844dd71d9b.PNG)![](http://p3b1oqmkp.bkt.clouddn.com/e114ef654533bb07740fd28b3f6a9c8b.PNG)![](http://p3b1oqmkp.bkt.clouddn.com/9346535f4a5181d4bc53206d3444fe9a.PNG)![](http://p3b1oqmkp.bkt.clouddn.com/c76d37341c2e08b753d9ec5952d3014f.PNG)
 
 ## **Note**
 
