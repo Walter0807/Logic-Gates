@@ -4,8 +4,6 @@
 
 ---
 
-**Following is my "About Your Playground" essay which was submitted with the playground.**
-
 This playground book introduces logic gates and logic design using several puzzles with guidance. The puzzles are not only interesting Boolean logic games but are also organized to convey philosophies of electronic engineering.
 
 
