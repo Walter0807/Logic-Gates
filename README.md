@@ -1,6 +1,6 @@
 # Logic Gates
 
-![WWDC](https://img.shields.io/badge/WWDC Scholarship Recipient 2018-Gray?logo=apple)
+![](https://img.shields.io/badge/WWDC 2018-Scholarship Recipient-Indigo?logo=apple)
 
 ![](Assets/1.jpeg)
 ![](Assets/2.jpeg)
@@ -9,5 +9,5 @@
 
 ## Platform
 
-*Swift Playgrounds* on iOS/iPadOS
+Run with *Swift Playgrounds* on iOS/iPadOS
 
