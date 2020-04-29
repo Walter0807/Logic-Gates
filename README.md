@@ -1,6 +1,6 @@
 # Logic Gates
 
-![](https://img.shields.io/badge/WWDC 2018-Scholarship Recipient-Indigo?logo=apple)
+![](https://img.shields.io/badge/WWDC_2018-Scholarship_Recipient-Indigo?logo=apple)
 
 ![](Assets/1.jpeg)
 ![](Assets/2.jpeg)
